@@ -1,0 +1,3503 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>军哥面试题-12.LeetCode面试常考题目 | By Wang</title><meta name="keywords" content="面试题"><meta name="author" content="Tiamo"><meta name="copyright" content="Tiamo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="军哥面试题-12.LeetCode面试常考题目"><meta name="application-name" content="军哥面试题-12.LeetCode面试常考题目"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="军哥面试题-12.LeetCode面试常考题目"><meta property="og:url" content="https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/index.html"><meta property="og:site_name" content="By Wang"><meta property="og:description" content="🥧军哥面试题-12.LeetCode面试常考题目"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://source.fomal.cc/img/default_cover_12.webp"><meta property="article:author" content="Tiamo"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://source.fomal.cc/img/default_cover_12.webp"><meta name="description" content="🥧军哥面试题-12.LeetCode面试常考题目"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//npm.onmicrosoft.cn"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"Tiamo","mode":"tianli","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":6,"basicWordCount":1999,"key":"207d044fe5f22c1dc77b","Referer":"https://blog.xiaoadai.com/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://comment.xiaoadai.com/',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Tiamo","link":"链接: ","source":"来源: By Wang","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'By Wang',
+  title: '军哥面试题-12.LeetCode面试常考题目',
+  postAI: '',
+  pageFillDescription: '序号题号题目难度频度题解反转链表容易题解数组中的第个最大元素中等题解无重复字符的最长子串中等题解个一组翻转链表困难题解缓存机制中等三数之和中等题解买卖股票的最佳时机容易题解两数之和容易题解环形链表中等题解二叉树的中序遍历中等题解二叉树的层序遍历中等题解二叉树的最近公共祖先中等题解二叉树的锯齿形层次遍历中等题解二叉树的右视图中等题解字符串相加容易题解相交链表容易题解合并两个有序链表容易题解岛屿数量中等题解有效的括号容易题解最大子序和容易题解反转链表中等题解环形链表容易题解二叉树的直径容易题解二叉树的最大深度容易题解的平方根容易题解合并两个有序数组容易题解平衡二叉树容易题解螺旋矩阵中等题解路径总和中等题解验证二叉搜索树中等题解接雨水困难题解二叉树中的最大路径和困难题解从前序与中序遍历序列构造二叉树中等题解翻转字符串里的单词中等题解回文链表容易题解搜索旋转排序数组中等题解旋转图像中等题解剑指链表中倒数第个节点容易题解最长回文子串中等题解二叉树的前序遍历中等题解用栈实现队列容易搜索二维矩阵中等题解合并个排序链表困难题解合并区间中等题解对称二叉树容易题解两数相加中等题解剑指用两个栈实现队列容易最小栈容易最长上升子序列中等题解最长连续序列困难题解全排列中等题解爬楼梯容易题解不同路径中等题解剑指调整数组顺序使奇数位于偶数前面容易题解复原地址中等题解删除排序链表中的重复元素容易题解排序链表中等题解多数元素容易题解二叉树的完全性检验中等题解缺失的第一个正数困难题解寻找两个正序数组的中位数困难题解编辑距离困难长度最小的子数组中等题解重排链表中等题解奇偶链表中等题解删除链表的倒数第个节点中等题解最长公共子序列中等题解验证地址中等在排序数组中查找元素的第一个和最后一个位置中等题解寻找峰值中等题解剑指二叉搜索树与双向链表中等零钱兑换中等题解字符串解码中等括号生成中等题解二叉树最大宽度中等两两交换链表中的节点中等翻转二叉树容易二分查找容易剑指反转链表容易买卖股票的最佳时机容易二叉树的后序遍历困难旋转数组容易剑指青蛙跳台阶问题容易分隔链表中等题解二叉树展开为链表中等打家劫舍容易比较版本号中等最长有效括号困难下一个排列中等和为的子数组中等滑动窗口最大值困难路径总和容易子集中等只出现一次的数字容易反转字符串容易剑指两个链表的第一个公共节点容易基本计算器困难最小覆盖子串困难删除排序链表中的重复元素中等剑指数组中的逆序对困难两个数组的交集容易寻找重复数中等最长重复子数组中等最小路径和中等单词搜索中等每日温度中等用实现中等零钱兑换中等剑指二叉搜索树的第大节点容易剑指连续子数组的最大和容易剑指二叉树的镜像容易解码方法中等求根到叶子节点数字之和中等二叉树的序列化与反序列化困难缓存困难有效的字母异位词容易最大数中等剑指最长不含重复字符的子字符串中等斐波那契数容易题解压缩字符串容易复制带随机指针的链表中等删除二叉搜索树中的节点中等补充题排序奇升偶降链表中等螺旋矩阵中等题解缺失数字容易剑指扑克牌中的顺子容易组合总和中等剑指合并两个排序的链表容易最大交换中等反转字符串中的单词容易整数反转容易最大正方形中等移动零容易课程表中等买卖股票的最佳时机困难剑指二维数组中的查找容易打乱数组中等按权重随机选择中等二叉搜索树中第小的元素中等课程表中等剑指把数组排成最小的数中等补充题圆环回原点问题中等和至少为的最短子数组困难删除排序数组中的重复项容易矩阵中的最长递增路径困难删除字符串中的所有相邻重复项容易区间列表的交集中等简化路径中等跳跃游戏中等剑指删除链表的节点容易对角线遍历中等用队列实现栈容易两数相加中等累加数中等通配符匹配困难实现前缀树中等字符串相乘中等另一个树的子树容易链表的中间结点容易剑指从上到下打印二叉树中等将二叉搜索树转化为排序的双向链表中等剑指数组中出现次数超过一半的数字容易完全二叉树的节点个数中等将有序数组转换为二叉搜索树容易二叉树的所有路径容易剑指二叉树中和为某一值的路径中等中等重复的子字符串容易解数独困难交错字符串困难三角形最小路径和中等山脉数组中查找目标值困难寻找旋转排序数组中的最小值困难计算右侧小于当前元素的个数困难最长公共前缀容易丑数中等验证回文串容易至多包含个不同字符的最长子串困难位的个数容易字母异位词分组中等移掉位数字中等二叉树剪枝中等二叉搜索树的最小绝对差容易二叉搜索树中的插入操作中等岛屿的最大面积中等恢复二叉搜索树困难乘积最大子数组中等下一个更大元素中等剑指中缺失的数字容易组合总和中等最接近的三数之和中等序列化和反序列化二叉搜索树中等单词拆分中等回文数容易剑指旋转数组的最小数字容易相同的树容易剑指顺时针打印矩阵容易剑指斐波那契数列容易全排列中等搜索二维矩阵中等数据流的中位数困难左叶子之和容易敲击计数器中等不同路径中等题解乘法表中第小的数困难前个高频单词中等合并二叉树容易杨辉三角容易二叉树中所有距离为的结点中等面试题栈排序中等二进制求和容易验证回文字符串容易形成三的最大倍数困难找到字符串中所有字母异位词中等对链表进行插入排序中等买卖股票的最佳时机困难拼接最大数困难判断二分图中等删除注释中等有序链表转换二叉搜索树中等不同岛屿的数量中等除自身以外数组的乘积中等最大矩形困难第个排列中等加油站中等计数质数容易剑指正则表达式匹配困难字典序排数中等节点与其祖先之间的最大差值中等分发糖果困难路径总和容易随机数索引中等最长回文子序列中等二叉搜索树迭代器中等跳跃游戏困难最大间距困难被围绕的区域中等剑指翻转单词顺序容易分割等和子集中等有序数组中的单一元素中等二叉搜索树的最近公共祖先容易剑指把数字翻译成字符串中等前个高频元素中等字符串中的第一个唯一字符容易有序数组的平方容易重构字符串中等鸡蛋掉落困难剑指最小的个数容易二叉树的最小深度容易寻找旋转排序数组中的最小值中等表列名称容易旋转链表中等单字符重复子串的最大长度中等三个数的最大乘积容易最长连续递增序列容易统计封闭岛屿的数目中等剑指矩阵中的路径中等字符串转换整数中等两个数组的交集容易剑指二叉搜索树的后序遍历序列中等丑数中等颠倒二进制位容易只出现一次的数字中等逆波兰表达式求值中等让字符串成为回文串的最少插入次数困难剑指二叉树的深度容易格雷编码中等接雨水困难递增的三元子序列中等面试题字符串压缩容易石子游戏中等员工薪水中位数困难字母移位中等乘积小于的子数组中等颜色分类中等组合中等不含或的字符串中等满足条件的子序列数目中等摆动序列中等打家劫舍中等剑指对称的二叉树容易连续数组中等矩阵区域和中等字典序的第小数字困难掷骰子的种方法中等只出现一次的数字中等剑指队列的最大值中等面试题移除重复节点容易剑指左旋转字符串容易最大频率栈困难电话号码的字母组合中等和等于的最长子数组长度中等面试题最小个数中等整数拆分中等快乐数容易删除子文件夹中等无重叠区间中等翻转等价二叉树中等二叉树的层次遍历容易具有所有最深结点的最小子树中等最大的以为边界的正方形中等第个数字中等规划兼职工作困难给单链表加一中等皇后困难岛屿数量困难最长回文串容易面试题链表相交容易阶乘后的零容易排序数组中等二叉树的层平均值容易替换后的最长重复字符中等杀死进程中等设计循环队列中等矩阵置零中等马在棋盘上的概率中等滑动谜题困难最大人工岛困难最长递增子序列的个数中等分割数组中等分裂二叉树的最大乘积中等剑指机器人的运动范围中等基本计算器中等搜寻名人中等保持城市天际线中等字形变换中等模式中等叉树的最大深度容易存在重复元素容易剑指数组中数字出现的次数中等剑指二叉树的最近公共祖先容易分割数组的最大值困难面试题八皇后困难剑指滑动窗口的最大值容易剑指剪绳子中等数组中两个数的最大异或值中等验证前序遍历序列二叉搜索树中等树的直径中等剑指把字符串转换成整数中等剑指字符串的排列中等分裂二叉树的最大乘积中等剑指机器人的运动范围中等基本计算器中等搜寻名人中等保持城市天际线中等字形变换中等模式中等叉树的最大深度容易存在重复元素容易剑指数组中数字出现的次数中等剑指二叉树的最近公共祖先容易分割数组的最大值困难面试题八皇后困难剑指滑动窗口的最大值容易剑指剪绳子中等数组中两个数的最大异或值中等验证前序遍历序列二叉搜索树中等树的直径中等剑指字符串的排列中等剑指把字符串转换成整数中等皇后困难腐烂的橘子中等剑指数据流中的中位数困难剑指平衡二叉树容易单词拆分困难数字转换为十六进制数容易滑动窗口中位数困难在每个树行中找最大值中等函数的独占时间中等将每个元素替换为右侧最大元素容易盛最多水的容器中等存在重复元素中等数组中两元素的最大乘积容易剑指整数中出现的次数中等剑指求中等柱状图中最大的矩形困难转置矩阵容易朋友圈中等子数组的最小值之和中等将数组分成和相等的三个部分容易正则表达式匹配困难最接近原点的个点中等剑指树的子结构中等表列序号容易灯泡开关中等二叉搜索树中的搜索容易',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-08-22 12:19:03',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">By Wang</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Chat-GPT/" style="font-size: 1.05rem;">Chat GPT<sup>1</sup></a><a href="/tags/Linux%E3%80%90Vi%E3%80%91/" style="font-size: 1.05rem;">Linux【Vi】<sup>1</sup></a><a href="/tags/python%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91/" style="font-size: 1.05rem;">python【爬虫】<sup>2</sup></a><a href="/tags/%E3%80%90JavaScript%E3%80%91/" style="font-size: 1.05rem;">【JavaScript】<sup>1</sup></a><a href="/tags/%E3%80%90Python%E3%80%91/" style="font-size: 1.05rem;">【Python】<sup>1</sup></a><a href="/tags/%E3%80%90Typora%E3%80%91/" style="font-size: 1.05rem;">【Typora】<sup>1</sup></a><a href="/tags/%E3%80%90%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E3%80%91/" style="font-size: 1.05rem;">【青龙面板】<sup>1</sup></a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem;">军哥面试题<sup>14</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90CSS%E3%80%91/" style="font-size: 1.05rem;">前端【CSS】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" style="font-size: 1.05rem;">前端【JavaScript】<sup>6</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JaveScript%E3%80%91/" style="font-size: 1.05rem;">前端【JaveScript】<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Layui%E3%80%91/" style="font-size: 1.05rem;">前端【Layui】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Vue%E3%80%91/" style="font-size: 1.05rem;">前端【Vue】<sup>4</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" style="font-size: 1.05rem;">学习日常<sup>4</sup></a><a href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/" style="font-size: 1.05rem;">模拟面试<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url">军哥面试题</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>军哥面试题</span></a></span></div></div><h1 class="post-title" itemprop="name headline">军哥面试题-12.LeetCode面试常考题目</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2022-08-22T04:19:03.000Z" title="发表于 2022-08-22 12:19:03">2022-08-22</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2022-08-22T04:19:03.000Z" title="更新于 2022-08-22 12:19:03">2022-08-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="军哥面试题-12.LeetCode面试常考题目"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为山东"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>山东</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://source.fomal.cc/img/default_cover_12.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/"><header><a class="post-meta-categories" href="/categories/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url">军哥面试题</a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" tabindex="-1" itemprop="url">军哥面试题</a><h1 id="CrawlerTitle" itemprop="name headline">军哥面试题-12.LeetCode面试常考题目</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Tiamo</span><time itemprop="dateCreated datePublished" datetime="2022-08-22T04:19:03.000Z" title="发表于 2022-08-22 12:19:03">2022-08-22</time><time itemprop="dateCreated datePublished" datetime="2022-08-22T04:19:03.000Z" title="更新于 2022-08-22 12:19:03">2022-08-22</time></header><table>
+<thead>
+<tr>
+<th><strong>序号</strong></th>
+<th><strong>题号</strong></th>
+<th><strong>题目</strong></th>
+<th><strong>难度</strong></th>
+<th><strong>频度</strong></th>
+<th><strong>题解</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>206</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list">反转链表</a></td>
+<td>容易</td>
+<td>96</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106676536">题解</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>215</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array">数组中的第K个最大元素</a></td>
+<td>中等</td>
+<td>85</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108436611">题解</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters">无重复字符的最长子串</a></td>
+<td>中等</td>
+<td>71</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/107877584">题解</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>25</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group">K 个一组翻转链表</a></td>
+<td>困难</td>
+<td>58</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108231000">题解</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>146</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lru-cache">LRU缓存机制</a></td>
+<td>中等</td>
+<td>56</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/3sum">三数之和</a></td>
+<td>中等</td>
+<td>52</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106596357">题解</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>121</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock">买卖股票的最佳时机</a></td>
+<td>容易</td>
+<td>46</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106699551">题解</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>1</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum">两数之和</a></td>
+<td>容易</td>
+<td>44</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106595078">题解</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>142</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii">环形链表 II</a></td>
+<td>中等</td>
+<td>40</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106699636">题解</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>94</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal">二叉树的中序遍历</a></td>
+<td>中等</td>
+<td>34</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/105973380">题解</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>102</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal">二叉树的层序遍历</a></td>
+<td>中等</td>
+<td>34</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106008688">题解</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>236</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree">二叉树的最近公共祖先</a></td>
+<td>中等</td>
+<td>31</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112131073">题解</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>103</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal">二叉树的锯齿形层次遍历</a></td>
+<td>中等</td>
+<td>30</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108178427">题解</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>199</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-right-side-view">二叉树的右视图</a></td>
+<td>中等</td>
+<td>28</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108448678">题解</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>415</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/add-strings">字符串相加</a></td>
+<td>容易</td>
+<td>27</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112131112">题解</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>160</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists">相交链表</a></td>
+<td>容易</td>
+<td>26</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108067127">题解</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>21</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-sorted-lists">合并两个有序链表</a></td>
+<td>容易</td>
+<td>26</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106650834">题解</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>200</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-islands">岛屿数量</a></td>
+<td>中等</td>
+<td>25</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/107501754">题解</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses">有效的括号</a></td>
+<td>容易</td>
+<td>25</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106726181">题解</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>53</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray">最大子序和</a></td>
+<td>容易</td>
+<td>25</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112131118">题解</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>92</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list-ii">反转链表 II</a></td>
+<td>中等</td>
+<td>24</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106677585">题解</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>141</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle">环形链表</a></td>
+<td>容易</td>
+<td>23</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106699551">题解</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>543</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/diameter-of-binary-tree">二叉树的直径</a></td>
+<td>容易</td>
+<td>23</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112134776">题解</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>104</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree">二叉树的最大深度</a></td>
+<td>容易</td>
+<td>22</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106009246">题解</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td>69</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sqrtx">x 的平方根</a></td>
+<td>容易</td>
+<td>21</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108656803">题解</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>88</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-sorted-array">合并两个有序数组</a></td>
+<td>容易</td>
+<td>21</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106595622">题解</a></td>
+</tr>
+<tr>
+<td>27</td>
+<td>110</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/balanced-binary-tree">平衡二叉树</a></td>
+<td>容易</td>
+<td>21</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/107151605">题解</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td>54</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/spiral-matrix">螺旋矩阵</a></td>
+<td>中等</td>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112137715">题解</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td>113</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum-ii">路径总和 II</a></td>
+<td>中等</td>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108458113">题解</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td>98</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-binary-search-tree">验证二叉搜索树</a></td>
+<td>中等</td>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106980295">题解</a></td>
+</tr>
+<tr>
+<td>31</td>
+<td>42</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/trapping-rain-water">接雨水</a></td>
+<td>困难</td>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112254417">题解</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td>124</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-maximum-path-sum">二叉树中的最大路径和</a></td>
+<td>困难</td>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112255014">题解</a></td>
+</tr>
+<tr>
+<td>33</td>
+<td>105</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal">从前序与中序遍历序列构造二叉树</a></td>
+<td>中等</td>
+<td>19</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108176121">题解</a></td>
+</tr>
+<tr>
+<td>34</td>
+<td>151</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-words-in-a-string">翻转字符串里的单词</a></td>
+<td>中等</td>
+<td>18</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112210308">题解</a></td>
+</tr>
+<tr>
+<td>35</td>
+<td>234</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/palindrome-linked-list">回文链表</a></td>
+<td>容易</td>
+<td>18</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108040927">题解</a></td>
+</tr>
+<tr>
+<td>36</td>
+<td>33</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array">搜索旋转排序数组</a></td>
+<td>中等</td>
+<td>18</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108452058">题解</a></td>
+</tr>
+<tr>
+<td>37</td>
+<td>48</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-image">旋转图像</a></td>
+<td>中等</td>
+<td>17</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112446655">题解</a></td>
+</tr>
+<tr>
+<td>38</td>
+<td>剑指 Offer 22</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof">链表中倒数第k个节点</a></td>
+<td>容易</td>
+<td>16</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113804214">题解</a></td>
+</tr>
+<tr>
+<td>39</td>
+<td>5</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-palindromic-substring">最长回文子串</a></td>
+<td>中等</td>
+<td>16</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106775026">题解</a></td>
+</tr>
+<tr>
+<td>40</td>
+<td>144</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal">二叉树的前序遍历</a></td>
+<td>中等</td>
+<td>16</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/105970362">题解</a></td>
+</tr>
+<tr>
+<td>41</td>
+<td>232</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-queue-using-stacks">用栈实现队列</a></td>
+<td>容易</td>
+<td>16</td>
+<td></td>
+</tr>
+<tr>
+<td>42</td>
+<td>240</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii">搜索二维矩阵 II</a></td>
+<td>中等</td>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113804527">题解</a></td>
+</tr>
+<tr>
+<td>43</td>
+<td>23</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-k-sorted-lists">合并K个排序链表</a></td>
+<td>困难</td>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108446322">题解</a></td>
+</tr>
+<tr>
+<td>44</td>
+<td>56</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-intervals">合并区间</a></td>
+<td>中等</td>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108446322">题解</a></td>
+</tr>
+<tr>
+<td>45</td>
+<td>101</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree">对称二叉树</a></td>
+<td>容易</td>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108091477">题解</a></td>
+</tr>
+<tr>
+<td>46</td>
+<td>2</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/add-two-numbers">两数相加</a></td>
+<td>中等</td>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/107872193">题解</a></td>
+</tr>
+<tr>
+<td>47</td>
+<td>剑指 Offer 09</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof">用两个栈实现队列</a></td>
+<td>容易</td>
+<td>15</td>
+<td></td>
+</tr>
+<tr>
+<td>48</td>
+<td>155</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/min-stack">最小栈</a></td>
+<td>容易</td>
+<td>14</td>
+<td></td>
+</tr>
+<tr>
+<td>49</td>
+<td>300</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-increasing-subsequence">最长上升子序列</a></td>
+<td>中等</td>
+<td>14</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113804861">题解</a></td>
+</tr>
+<tr>
+<td>50</td>
+<td>128</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-consecutive-sequence">最长连续序列</a></td>
+<td>困难</td>
+<td>13</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113962133">题解</a></td>
+</tr>
+<tr>
+<td>51</td>
+<td>46</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations">全排列</a></td>
+<td>中等</td>
+<td>13</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108549192">题解</a></td>
+</tr>
+<tr>
+<td>52</td>
+<td>70</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs">爬楼梯</a></td>
+<td>容易</td>
+<td>13</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113873250">题解</a></td>
+</tr>
+<tr>
+<td>53</td>
+<td>62</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths">不同路径</a></td>
+<td>中等</td>
+<td>13</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113873798">题解</a></td>
+</tr>
+<tr>
+<td>54</td>
+<td>剑指 Offer 21</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof">调整数组顺序使奇数位于偶数前面</a></td>
+<td>容易</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/114108941">题解</a></td>
+</tr>
+<tr>
+<td>55</td>
+<td>93</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/restore-ip-addresses">复原IP地址</a></td>
+<td>中等</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113965009">题解</a></td>
+</tr>
+<tr>
+<td>56</td>
+<td>83</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list">删除排序链表中的重复元素</a></td>
+<td>容易</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106650954">题解</a></td>
+</tr>
+<tr>
+<td>57</td>
+<td>148</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-list">排序链表</a></td>
+<td>中等</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108044466">题解</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td>169</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/majority-element">多数元素</a></td>
+<td>容易</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108230508">题解</a></td>
+</tr>
+<tr>
+<td>59</td>
+<td>958</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree">二叉树的完全性检验</a></td>
+<td>中等</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113964032">题解</a></td>
+</tr>
+<tr>
+<td>60</td>
+<td>41</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/first-missing-positive">缺失的第一个正数</a></td>
+<td>困难</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/114178789">题解</a></td>
+</tr>
+<tr>
+<td>61</td>
+<td>4</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays">寻找两个正序数组的中位数</a></td>
+<td>困难</td>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/114179481">题解</a></td>
+</tr>
+<tr>
+<td>62</td>
+<td>72</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/edit-distance">编辑距离</a></td>
+<td>困难</td>
+<td>11</td>
+<td></td>
+</tr>
+<tr>
+<td>63</td>
+<td>209</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-size-subarray-sum">长度最小的子数组</a></td>
+<td>中等</td>
+<td>11</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108457712">题解</a></td>
+</tr>
+<tr>
+<td>64</td>
+<td>143</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reorder-list">重排链表</a></td>
+<td>中等</td>
+<td>11</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108468070">题解</a></td>
+</tr>
+<tr>
+<td>65</td>
+<td>328</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/odd-even-linked-list">奇偶链表</a></td>
+<td>中等</td>
+<td>11</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108067365">题解</a></td>
+</tr>
+<tr>
+<td>66</td>
+<td>19</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list">删除链表的倒数第N个节点</a></td>
+<td>中等</td>
+<td>10</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/106673376">题解</a></td>
+</tr>
+<tr>
+<td>67</td>
+<td>1143</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-common-subsequence">最长公共子序列</a></td>
+<td>中等</td>
+<td>10</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/114185057">题解</a></td>
+</tr>
+<tr>
+<td>68</td>
+<td>468</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-ip-address">验证IP地址</a></td>
+<td>中等</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>69</td>
+<td>34</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array">在排序数组中查找元素的第一个和最后一个位置</a></td>
+<td>中等</td>
+<td>10</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108551378">题解</a></td>
+</tr>
+<tr>
+<td>70</td>
+<td>162</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-peak-element">寻找峰值</a></td>
+<td>中等</td>
+<td>10</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/114187295">题解</a></td>
+</tr>
+<tr>
+<td>71</td>
+<td>剑指 Offer 36</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof">二叉搜索树与双向链表</a></td>
+<td>中等</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>72</td>
+<td>322</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change">零钱兑换</a></td>
+<td>中等</td>
+<td>9</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/114189426">题解</a></td>
+</tr>
+<tr>
+<td>73</td>
+<td>394</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/decode-string">字符串解码</a></td>
+<td>中等</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>74</td>
+<td>22</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/generate-parentheses">括号生成</a></td>
+<td>中等</td>
+<td>9</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/108305376">题解</a></td>
+</tr>
+<tr>
+<td>75</td>
+<td>662</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-width-of-binary-tree">二叉树最大宽度</a></td>
+<td>中等</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>76</td>
+<td>24</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/swap-nodes-in-pairs">两两交换链表中的节点</a></td>
+<td>中等</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>77</td>
+<td>226</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree">翻转二叉树</a></td>
+<td>容易</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>78</td>
+<td>704</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-search">二分查找</a></td>
+<td>容易</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>79</td>
+<td>剑指 Offer 24</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof">反转链表</a></td>
+<td>容易</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>80</td>
+<td>122</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii">买卖股票的最佳时机 II</a></td>
+<td>容易</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>81</td>
+<td>145</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal">二叉树的后序遍历</a></td>
+<td>困难</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>82</td>
+<td>189</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-array">旋转数组</a></td>
+<td>容易</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>83</td>
+<td>剑指 Offer 10 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof">青蛙跳台阶问题</a></td>
+<td>容易</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>84</td>
+<td>86</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-list">分隔链表</a></td>
+<td>中等</td>
+<td>8</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112130920">题解</a></td>
+</tr>
+<tr>
+<td>85</td>
+<td>114</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list">二叉树展开为链表</a></td>
+<td>中等</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>86</td>
+<td>198</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/house-robber">打家劫舍</a></td>
+<td>容易</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>87</td>
+<td>165</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/compare-version-numbers">比较版本号</a></td>
+<td>中等</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>88</td>
+<td>32</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-valid-parentheses">最长有效括号</a></td>
+<td>困难</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>89</td>
+<td>31</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/next-permutation">下一个排列</a></td>
+<td>中等</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>90</td>
+<td>560</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subarray-sum-equals-k">和为K的子数组</a></td>
+<td>中等</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>91</td>
+<td>239</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sliding-window-maximum">滑动窗口最大值</a></td>
+<td>困难</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>92</td>
+<td>112</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum">路径总和</a></td>
+<td>容易</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>93</td>
+<td>78</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subsets">子集</a></td>
+<td>中等</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>94</td>
+<td>136</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number">只出现一次的数字</a></td>
+<td>容易</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>95</td>
+<td>344</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-string">反转字符串</a></td>
+<td>容易</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>96</td>
+<td>剑指 Offer 52</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof">两个链表的第一个公共节点</a></td>
+<td>容易</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>97</td>
+<td>224</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator">基本计算器</a></td>
+<td>困难</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>98</td>
+<td>76</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-window-substring">最小覆盖子串</a></td>
+<td>困难</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>99</td>
+<td>82</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii">删除排序链表中的重复元素 II</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>100</td>
+<td>剑指 Offer 51</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof">数组中的逆序对</a></td>
+<td>困难</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>101</td>
+<td>349</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays">两个数组的交集</a></td>
+<td>容易</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>102</td>
+<td>287</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-duplicate-number">寻找重复数</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>103</td>
+<td>718</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray">最长重复子数组</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>104</td>
+<td>64</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-path-sum">最小路径和</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>105</td>
+<td>79</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-search">单词搜索</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>106</td>
+<td>739</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/daily-temperatures">每日温度</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>107</td>
+<td>470</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-rand10-using-rand7">用 Rand7() 实现 Rand10()</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>108</td>
+<td>518</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change-2">零钱兑换 II</a></td>
+<td>中等</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>109</td>
+<td>剑指 Offer 54</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof">二叉搜索树的第k大节点</a></td>
+<td>容易</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>110</td>
+<td>剑指 Offer 42</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof">连续子数组的最大和</a></td>
+<td>容易</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>111</td>
+<td>剑指 Offer 27</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof">二叉树的镜像</a></td>
+<td>容易</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>112</td>
+<td>91</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/decode-ways">解码方法</a></td>
+<td>中等</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>113</td>
+<td>129</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-root-to-leaf-numbers">求根到叶子节点数字之和</a></td>
+<td>中等</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>114</td>
+<td>297</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree">二叉树的序列化与反序列化</a></td>
+<td>困难</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>115</td>
+<td>460</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lfu-cache">LFU缓存</a></td>
+<td>困难</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>116</td>
+<td>242</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram">有效的字母异位词</a></td>
+<td>容易</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>117</td>
+<td>179</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-number">最大数</a></td>
+<td>中等</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>118</td>
+<td>剑指 Offer 48</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof">最长不含重复字符的子字符串</a></td>
+<td>中等</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>119</td>
+<td>509</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fibonacci-number">斐波那契数</a></td>
+<td>容易</td>
+<td>6</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112209242">题解</a></td>
+</tr>
+<tr>
+<td>120</td>
+<td>443</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/string-compression">压缩字符串</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>121</td>
+<td>138</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/copy-list-with-random-pointer">复制带随机指针的链表</a></td>
+<td>中等</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>122</td>
+<td>450</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-node-in-a-bst">删除二叉搜索树中的节点</a></td>
+<td>中等</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>123</td>
+<td>补充题1</td>
+<td><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/311113031">排序奇升偶降链表</a></td>
+<td>中等</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>124</td>
+<td>59</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/spiral-matrix-ii">螺旋矩阵 II</a></td>
+<td>中等</td>
+<td>5</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/112141555">题解</a></td>
+</tr>
+<tr>
+<td>125</td>
+<td>268</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/missing-number">缺失数字</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>126</td>
+<td>剑指 Offer 61</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof">扑克牌中的顺子</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>127</td>
+<td>39</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum">组合总和</a></td>
+<td>中等</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>128</td>
+<td>剑指 Offer 25</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof">合并两个排序的链表</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>129</td>
+<td>670</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-swap">最大交换</a></td>
+<td>中等</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>130</td>
+<td>557</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-words-in-a-string-iii">反转字符串中的单词 III</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>131</td>
+<td>7</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-integer">整数反转</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>132</td>
+<td>221</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximal-square">最大正方形</a></td>
+<td>中等</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>133</td>
+<td>283</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/move-zeroes">移动零</a></td>
+<td>容易</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>134</td>
+<td>207</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/course-schedule">课程表</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>135</td>
+<td>123</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii">买卖股票的最佳时机 III</a></td>
+<td>困难</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>136</td>
+<td>剑指 Offer 04</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof">二维数组中的查找</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>137</td>
+<td>384</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shuffle-an-array">打乱数组</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>138</td>
+<td>528</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/random-pick-with-weight">按权重随机选择</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>139</td>
+<td>230</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst">二叉搜索树中第K小的元素</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>140</td>
+<td>210</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/course-schedule-ii">课程表 II</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>141</td>
+<td>剑指 Offer 45</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof">把数组排成最小的数</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>142</td>
+<td>补充题2</td>
+<td><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338806463">圆环回原点问题</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>143</td>
+<td>862</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k">和至少为 K 的最短子数组</a></td>
+<td>困难</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>144</td>
+<td>26</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array">删除排序数组中的重复项</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>145</td>
+<td>329</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix">矩阵中的最长递增路径</a></td>
+<td>困难</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>146</td>
+<td>1047</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string">删除字符串中的所有相邻重复项</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>147</td>
+<td>986</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/interval-list-intersections">区间列表的交集</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>148</td>
+<td>71</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/simplify-path">简化路径</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>149</td>
+<td>55</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jump-game">跳跃游戏</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>150</td>
+<td>剑指 Offer 18</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof">删除链表的节点</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>151</td>
+<td>498</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/diagonal-traverse">对角线遍历</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>152</td>
+<td>225</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-stack-using-queues">用队列实现栈</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>153</td>
+<td>445</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/add-two-numbers-ii">两数相加 II</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>154</td>
+<td>306</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/additive-number">累加数</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>155</td>
+<td>44</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/wildcard-matching">通配符匹配</a></td>
+<td>困难</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>156</td>
+<td>208</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-trie-prefix-tree">实现 Trie (前缀树)</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>157</td>
+<td>43</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/multiply-strings">字符串相乘</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>158</td>
+<td>572</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subtree-of-another-tree">另一个树的子树</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>159</td>
+<td>876</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/middle-of-the-linked-list">链表的中间结点</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>160</td>
+<td>剑指 Offer 32 - III</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof">从上到下打印二叉树 III</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>161</td>
+<td>426</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list">将二叉搜索树转化为排序的双向链表</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>162</td>
+<td>剑指 Offer 39</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof">数组中出现次数超过一半的数字</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>163</td>
+<td>222</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-complete-tree-nodes">完全二叉树的节点个数</a></td>
+<td>中等</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>164</td>
+<td>108</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree">将有序数组转换为二叉搜索树</a></td>
+<td>容易</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>165</td>
+<td>257</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-paths">二叉树的所有路径</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>166</td>
+<td>剑指 Offer 34</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof">二叉树中和为某一值的路径</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>167</td>
+<td>50</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/powx-n">Pow(x, n)</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>168</td>
+<td>459</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/repeated-substring-pattern">重复的子字符串</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>169</td>
+<td>37</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sudoku-solver">解数独</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>170</td>
+<td>97</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/interleaving-string">交错字符串</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>171</td>
+<td>120</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/triangle">三角形最小路径和</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>172</td>
+<td>1095</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-in-mountain-array">山脉数组中查找目标值</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>173</td>
+<td>154</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii">寻找旋转排序数组中的最小值 II</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>174</td>
+<td>315</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self">计算右侧小于当前元素的个数</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>175</td>
+<td>14</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-common-prefix">最长公共前缀</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>176</td>
+<td>264</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ugly-number-ii">丑数 II</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>177</td>
+<td>125</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-palindrome">验证回文串</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>178</td>
+<td>340</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters">至多包含 K 个不同字符的最长子串</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>179</td>
+<td>191</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-1-bits">位1的个数</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>180</td>
+<td>49</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/group-anagrams">字母异位词分组</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>181</td>
+<td>402</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-k-digits">移掉K位数字</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>182</td>
+<td>814</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-pruning">二叉树剪枝</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>183</td>
+<td>530</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst">二叉搜索树的最小绝对差</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>184</td>
+<td>701</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/insert-into-a-binary-search-tree">二叉搜索树中的插入操作</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>185</td>
+<td>695</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/max-area-of-island">岛屿的最大面积</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>186</td>
+<td>99</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/recover-binary-search-tree">恢复二叉搜索树</a></td>
+<td>困难</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>187</td>
+<td>152</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-product-subarray">乘积最大子数组</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>188</td>
+<td>503</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/next-greater-element-ii">下一个更大元素 II</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>189</td>
+<td>剑指 Offer 53 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof">0～n-1中缺失的数字</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>190</td>
+<td>40</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum-ii">组合总和 II</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>191</td>
+<td>16</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/3sum-closest">最接近的三数之和</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>192</td>
+<td>449</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/serialize-and-deserialize-bst">序列化和反序列化二叉搜索树</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>193</td>
+<td>139</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-break">单词拆分</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>194</td>
+<td>9</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/palindrome-number">回文数</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>195</td>
+<td>剑指 Offer 11</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof">旋转数组的最小数字</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>196</td>
+<td>100</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree">相同的树</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>197</td>
+<td>剑指 Offer 29</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof">顺时针打印矩阵</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>198</td>
+<td>剑指 Offer 10 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof">斐波那契数列</a></td>
+<td>容易</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>199</td>
+<td>47</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations-ii">全排列 II</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>200</td>
+<td>74</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-a-2d-matrix">搜索二维矩阵</a></td>
+<td>中等</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>201</td>
+<td>295</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-median-from-data-stream">数据流的中位数</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>202</td>
+<td>404</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-left-leaves">左叶子之和</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>203</td>
+<td>362</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/design-hit-counter">敲击计数器</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>204</td>
+<td>63</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths-ii">不同路径 II</a></td>
+<td>中等</td>
+<td>2</td>
+<td><a target="_blank" rel="noopener" href="https://cuggz.blog.csdn.net/article/details/113874084">题解</a></td>
+</tr>
+<tr>
+<td>205</td>
+<td>668</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-smallest-number-in-multiplication-table">乘法表中第k小的数</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>206</td>
+<td>692</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/top-k-frequent-words">前K个高频单词</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>207</td>
+<td>617</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-binary-trees">合并二叉树</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>208</td>
+<td>119</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pascals-triangle-ii">杨辉三角 II</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>209</td>
+<td>863</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree">二叉树中所有距离为 K 的结点</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>210</td>
+<td>面试题 03.05</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-of-stacks-lcci">栈排序</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>211</td>
+<td>67</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/add-binary">二进制求和</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>212</td>
+<td>680</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-palindrome-ii">验证回文字符串 Ⅱ</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>213</td>
+<td>1363</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-multiple-of-three">形成三的最大倍数</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>214</td>
+<td>438</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string">找到字符串中所有字母异位词</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>215</td>
+<td>147</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/insertion-sort-list">对链表进行插入排序</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>216</td>
+<td>188</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv">买卖股票的最佳时机 IV</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>217</td>
+<td>321</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/create-maximum-number">拼接最大数</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>218</td>
+<td>785</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/is-graph-bipartite">判断二分图</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>219</td>
+<td>722</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-comments">删除注释</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>220</td>
+<td>109</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree">有序链表转换二叉搜索树</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>221</td>
+<td>694</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-distinct-islands">不同岛屿的数量</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>222</td>
+<td>238</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/product-of-array-except-self">除自身以外数组的乘积</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>223</td>
+<td>85</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximal-rectangle">最大矩形</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>224</td>
+<td>60</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutation-sequence">第k个排列</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>225</td>
+<td>134</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/gas-station">加油站</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>226</td>
+<td>204</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-primes">计数质数</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>227</td>
+<td>剑指 Offer 19</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof">正则表达式匹配</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>228</td>
+<td>386</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lexicographical-numbers">字典序排数</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>229</td>
+<td>1026</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-difference-between-node-and-ancestor">节点与其祖先之间的最大差值</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>230</td>
+<td>135</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/candy">分发糖果</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>231</td>
+<td>437</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum-iii">路径总和 III</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>232</td>
+<td>398</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/random-pick-index">随机数索引</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>233</td>
+<td>516</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-palindromic-subsequence">最长回文子序列</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>234</td>
+<td>173</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-search-tree-iterator">二叉搜索树迭代器</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>235</td>
+<td>45</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jump-game-ii">跳跃游戏 II</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>236</td>
+<td>164</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-gap">最大间距</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>237</td>
+<td>130</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/surrounded-regions">被围绕的区域</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>238</td>
+<td>剑指 Offer 58 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fan-zhuan-dan-ci-shun-xu-lcof">翻转单词顺序</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>239</td>
+<td>416</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-equal-subset-sum">分割等和子集</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>240</td>
+<td>540</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array">有序数组中的单一元素</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>241</td>
+<td>235</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree">二叉搜索树的最近公共祖先</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>242</td>
+<td>剑指 Offer 46</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof">把数字翻译成字符串</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>243</td>
+<td>347</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/top-k-frequent-elements">前 K 个高频元素</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>244</td>
+<td>387</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/first-unique-character-in-a-string">字符串中的第一个唯一字符</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>245</td>
+<td>977</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/squares-of-a-sorted-array">有序数组的平方</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>246</td>
+<td>767</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reorganize-string">重构字符串</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>247</td>
+<td>887</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/super-egg-drop">鸡蛋掉落</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>248</td>
+<td>剑指 Offer 40</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof">最小的k个数</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>249</td>
+<td>111</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree">二叉树的最小深度</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>250</td>
+<td>153</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array">寻找旋转排序数组中的最小值</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>251</td>
+<td>168</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/excel-sheet-column-title">Excel表列名称</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>252</td>
+<td>61</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-list">旋转链表</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>253</td>
+<td>1156</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/swap-for-longest-repeated-character-substring">单字符重复子串的最大长度</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>254</td>
+<td>628</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-product-of-three-numbers">三个数的最大乘积</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>255</td>
+<td>674</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence">最长连续递增序列</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>256</td>
+<td>1254</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-closed-islands">统计封闭岛屿的数目</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>257</td>
+<td>剑指 Offer 12</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof">矩阵中的路径</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>258</td>
+<td>8</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/string-to-integer-atoi">字符串转换整数 (atoi)</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>259</td>
+<td>350</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays-ii">两个数组的交集 II</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>260</td>
+<td>剑指 Offer 33</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof">二叉搜索树的后序遍历序列</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>261</td>
+<td>1201</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ugly-number-iii">丑数 III</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>262</td>
+<td>190</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-bits">颠倒二进制位</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>263</td>
+<td>137</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-ii">只出现一次的数字 II</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>264</td>
+<td>150</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/evaluate-reverse-polish-notation">逆波兰表达式求值</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>265</td>
+<td>1312</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome">让字符串成为回文串的最少插入次数</a></td>
+<td>困难</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>266</td>
+<td>剑指 Offer 55 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof">二叉树的深度</a></td>
+<td>容易</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>267</td>
+<td>89</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/gray-code">格雷编码</a></td>
+<td>中等</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>268</td>
+<td>407</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/trapping-rain-water-ii">接雨水 II</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>269</td>
+<td>334</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/increasing-triplet-subsequence">递增的三元子序列</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>270</td>
+<td>面试题 01.06</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/compress-string-lcci">字符串压缩</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>271</td>
+<td>877</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/stone-game">石子游戏</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>272</td>
+<td>569</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/median-employee-salary">员工薪水中位数</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>273</td>
+<td>848</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shifting-letters">字母移位</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>274</td>
+<td>713</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subarray-product-less-than-k">乘积小于K的子数组</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>275</td>
+<td>75</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-colors">颜色分类</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>276</td>
+<td>77</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combinations">组合</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>277</td>
+<td>984</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/string-without-aaa-or-bbb">不含 AAA 或 BBB 的字符串</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>278</td>
+<td>1498</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition">满足条件的子序列数目</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>279</td>
+<td>376</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/wiggle-subsequence">摆动序列</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>280</td>
+<td>213</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/house-robber-ii">打家劫舍 II</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>281</td>
+<td>剑指 Offer 28</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof">对称的二叉树</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>282</td>
+<td>525</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contiguous-array">连续数组</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>283</td>
+<td>1314</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/matrix-block-sum">矩阵区域和</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>284</td>
+<td>440</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order">字典序的第K小数字</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>285</td>
+<td>1155</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-dice-rolls-with-target-sum">掷骰子的N种方法</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>286</td>
+<td>260</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-iii">只出现一次的数字 III</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>287</td>
+<td>剑指 Offer 59 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof">队列的最大值</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>288</td>
+<td>面试题 02.01</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicate-node-lcci">移除重复节点</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>289</td>
+<td>剑指 Offer 58 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof">左旋转字符串</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>290</td>
+<td>895</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-frequency-stack">最大频率栈</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>291</td>
+<td>17</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number">电话号码的字母组合</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>292</td>
+<td>325</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-size-subarray-sum-equals-k">和等于 k 的最长子数组长度</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>293</td>
+<td>面试题 17.14</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/smallest-k-lcci">最小K个数</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>294</td>
+<td>343</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/integer-break">整数拆分</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>295</td>
+<td>202</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number">快乐数</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>296</td>
+<td>1233</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-sub-folders-from-the-filesystem">删除子文件夹</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>297</td>
+<td>435</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals">无重叠区间</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>298</td>
+<td>951</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/flip-equivalent-binary-trees">翻转等价二叉树</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>299</td>
+<td>107</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii">二叉树的层次遍历 II</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>300</td>
+<td>865</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes">具有所有最深结点的最小子树</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>301</td>
+<td>1139</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-1-bordered-square">最大的以 1 为边界的正方形</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>302</td>
+<td>400</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/nth-digit">第N个数字</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>303</td>
+<td>1235</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling">规划兼职工作</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>304</td>
+<td>369</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/plus-one-linked-list">给单链表加一</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>305</td>
+<td>52</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/n-queens-ii">N皇后 II</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>306</td>
+<td>305</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-islands-ii">岛屿数量 II</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>307</td>
+<td>409</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-palindrome">最长回文串</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>308</td>
+<td>面试题 02.07</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci">链表相交</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>309</td>
+<td>172</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/factorial-trailing-zeroes">阶乘后的零</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>310</td>
+<td>912</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-an-array">排序数组</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>311</td>
+<td>637</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/average-of-levels-in-binary-tree">二叉树的层平均值</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>312</td>
+<td>424</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-repeating-character-replacement">替换后的最长重复字符</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>313</td>
+<td>582</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kill-process">杀死进程</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>314</td>
+<td>622</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/design-circular-queue">设计循环队列</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>315</td>
+<td>73</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/set-matrix-zeroes">矩阵置零</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>316</td>
+<td>688</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/knight-probability-in-chessboard">“马”在棋盘上的概率</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>317</td>
+<td>773</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sliding-puzzle">滑动谜题</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>318</td>
+<td>827</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/making-a-large-island">最大人工岛</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>319</td>
+<td>673</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence">最长递增子序列的个数</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>320</td>
+<td>915</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-array-into-disjoint-intervals">分割数组</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>321</td>
+<td>1339</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-product-of-splitted-binary-tree">分裂二叉树的最大乘积</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>322</td>
+<td>剑指 Offer 13</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof">机器人的运动范围</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>323</td>
+<td>227</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii">基本计算器 II</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>324</td>
+<td>277</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-celebrity">搜寻名人</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>325</td>
+<td>807</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline">保持城市天际线</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>326</td>
+<td>6</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zigzag-conversion">Z 字形变换</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>327</td>
+<td>456</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/132-pattern">132模式</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>328</td>
+<td>559</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree">N叉树的最大深度</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>329</td>
+<td>217</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate">存在重复元素</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>330</td>
+<td>剑指 Offer 56 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof">数组中数字出现的次数 II</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>331</td>
+<td>剑指 Offer 68 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof">二叉树的最近公共祖先</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>332</td>
+<td>410</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/split-array-largest-sum">分割数组的最大值</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>333</td>
+<td>面试题 08.12</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/eight-queens-lcci">八皇后</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>334</td>
+<td>剑指 Offer 59 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof">滑动窗口的最大值</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>335</td>
+<td>剑指 Offer 14 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jian-sheng-zi-lcof">剪绳子</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>336</td>
+<td>421</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array">数组中两个数的最大异或值</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>337</td>
+<td>255</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/verify-preorder-sequence-in-binary-search-tree">验证前序遍历序列二叉搜索树</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>338</td>
+<td>1245</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/tree-diameter">树的直径</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>339</td>
+<td>剑指 Offer 67</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof">把字符串转换成整数</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>340</td>
+<td>剑指 Offer 38</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof">字符串的排列</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>341</td>
+<td>1339</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-product-of-splitted-binary-tree">分裂二叉树的最大乘积</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>342</td>
+<td>剑指 Offer 13</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof">机器人的运动范围</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>343</td>
+<td>227</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii">基本计算器 II</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>344</td>
+<td>277</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-celebrity">搜寻名人</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>345</td>
+<td>807</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline">保持城市天际线</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>346</td>
+<td>6</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zigzag-conversion">Z 字形变换</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>347</td>
+<td>456</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/132-pattern">132模式</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>348</td>
+<td>559</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree">N叉树的最大深度</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>349</td>
+<td>217</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate">存在重复元素</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>350</td>
+<td>剑指 Offer 56 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof">数组中数字出现的次数 II</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>351</td>
+<td>剑指 Offer 68 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof">二叉树的最近公共祖先</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>352</td>
+<td>410</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/split-array-largest-sum">分割数组的最大值</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>353</td>
+<td>面试题 08.12</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/eight-queens-lcci">八皇后</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>354</td>
+<td>剑指 Offer 59 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof">滑动窗口的最大值</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>355</td>
+<td>剑指 Offer 14 - I</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jian-sheng-zi-lcof">剪绳子</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>356</td>
+<td>421</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array">数组中两个数的最大异或值</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>357</td>
+<td>255</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/verify-preorder-sequence-in-binary-search-tree">验证前序遍历序列二叉搜索树</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>358</td>
+<td>1245</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/tree-diameter">树的直径</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>359</td>
+<td>剑指 Offer 38</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof">字符串的排列</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>360</td>
+<td>剑指 Offer 67</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof">把字符串转换成整数</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>361</td>
+<td>51</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/n-queens">N皇后</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>362</td>
+<td>994</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotting-oranges">腐烂的橘子</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>363</td>
+<td>剑指 Offer 41</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof">数据流中的中位数</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>364</td>
+<td>剑指 Offer 55 - II</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof">平衡二叉树</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>365</td>
+<td>140</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-break-ii">单词拆分 II</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>366</td>
+<td>405</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal">数字转换为十六进制数</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>367</td>
+<td>480</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sliding-window-median">滑动窗口中位数</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>368</td>
+<td>515</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row">在每个树行中找最大值</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>369</td>
+<td>636</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/exclusive-time-of-functions">函数的独占时间</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>370</td>
+<td>1299</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/replace-elements-with-greatest-element-on-right-side">将每个元素替换为右侧最大元素</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>371</td>
+<td>11</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/container-with-most-water">盛最多水的容器</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>372</td>
+<td>220</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate-iii">存在重复元素 III</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>373</td>
+<td>1464</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-product-of-two-elements-in-an-array">数组中两元素的最大乘积</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>374</td>
+<td>剑指 Offer 43</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof">1～n整数中1出现的次数</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>375</td>
+<td>剑指 Offer 64</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/qiu-12n-lcof">求1+2+…+n</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>376</td>
+<td>84</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram">柱状图中最大的矩形</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>377</td>
+<td>867</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/transpose-matrix">转置矩阵</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>378</td>
+<td>547</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/friend-circles">朋友圈</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>379</td>
+<td>907</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-subarray-minimums">子数组的最小值之和</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>380</td>
+<td>1013</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum">将数组分成和相等的三个部分</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>381</td>
+<td>10</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/regular-expression-matching">正则表达式匹配</a></td>
+<td>困难</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>382</td>
+<td>973</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/k-closest-points-to-origin">最接近原点的 K 个点</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>383</td>
+<td>剑指 Offer 26</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof">树的子结构</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>384</td>
+<td>171</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/excel-sheet-column-number">Excel表列序号</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>385</td>
+<td>1375</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/bulb-switcher-iii">灯泡开关 III</a></td>
+<td>中等</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>386</td>
+<td>700</td>
+<td><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree">二叉搜索树中的搜索</a></td>
+<td>容易</td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Tiamo</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/')">军哥面试题-12.LeetCode面试常考题目</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=军哥面试题-12.LeetCode面试常考题目&amp;url=https://blog.xiaoadai.com/2022/08/22/12LeetCode%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%A2%98%E7%9B%AE/&amp;pic=https://source.fomal.cc/img/default_cover_12.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.xiaoadai.com" target="_blank">By Wang</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>军哥面试题<span class="tagsPageCount">14</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://source.fomal.cc/img/default_cover_7.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/21/11%20offer%E6%94%B6%E5%89%B2%E6%9C%BA%E4%B9%8B%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E7%AF%87/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_11.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">军哥面试题-11.代码输出篇</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/23/13%20offer%E6%94%B6%E5%89%B2%E6%9C%BA%E4%B9%8BVue%E7%AF%87/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_13.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">军哥面试题-13.Vue篇</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2022/08/10/1%20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" title="军哥面试题--1.前端面试准备"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-10</div><div class="title">军哥面试题--1.前端面试准备</div></div></a></div><div><a href="/2022/08/21/11%20offer%E6%94%B6%E5%89%B2%E6%9C%BA%E4%B9%8B%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E7%AF%87/" title="军哥面试题-11.代码输出篇"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_11.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-21</div><div class="title">军哥面试题-11.代码输出篇</div></div></a></div><div><a href="/2022/08/20/10%20offer%E6%94%B6%E5%89%B2%E6%9C%BA%E4%B9%8B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81%E7%AF%87/" title="军哥面试题-10.手写代码篇"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_10.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-20</div><div class="title">军哥面试题-10.手写代码篇</div></div></a></div><div><a href="/2022/08/23/13%20offer%E6%94%B6%E5%89%B2%E6%9C%BA%E4%B9%8BVue%E7%AF%87/" title="军哥面试题-13.Vue篇"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_13.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-23</div><div class="title">军哥面试题-13.Vue篇</div></div></a></div><div><a href="/2022/08/11/2%20%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E8%BD%AF%E6%8A%80%E8%83%BD/" title="军哥面试题--2.程序员面试软技能"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_2.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-11</div><div class="title">军哥面试题--2.程序员面试软技能</div></div></a></div><div><a href="/2022/08/25/14%20vue%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="军哥面试题-14.性能优化篇"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_14.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-25</div><div class="title">军哥面试题-14.性能优化篇</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png" ait="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">前端、Python、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(null) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/09/%E3%80%90Typora%E3%80%91Typora%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" title="【Typora】Typora破解教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Typora】Typora破解教程"/></a><div class="content"><a class="title" href="/2024/01/09/%E3%80%90Typora%E3%80%91Typora%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" title="【Typora】Typora破解教程">【Typora】Typora破解教程</a><time datetime="2024-01-08T16:00:00.000Z" title="发表于 2024-01-09 00:00:00">2024-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_10.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端【JavaScript】JavaScript 内的 this 指向"/></a><div class="content"><a class="title" href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向">前端【JavaScript】JavaScript 内的 this 指向</a><time datetime="2023-11-13T13:31:28.000Z" title="发表于 2023-11-13 21:31:28">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/%E3%80%90Vue%E3%80%91%E5%88%86%E4%BA%AB%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" title="【Vue】分享下如何在Vue项目中进行网页布局"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_15.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Vue】分享下如何在Vue项目中进行网页布局"/></a><div class="content"><a class="title" href="/2023/11/13/%E3%80%90Vue%E3%80%91%E5%88%86%E4%BA%AB%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" title="【Vue】分享下如何在Vue项目中进行网页布局">【Vue】分享下如何在Vue项目中进行网页布局</a><time datetime="2023-11-13T13:31:28.000Z" title="发表于 2023-11-13 21:31:28">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/12/%E3%80%90Css%E3%80%91CSS%E3%80%81LESS%E3%80%81SASS%E3%80%81SCSS%20%E7%9A%84%E5%8C%BA%E5%88%AB/" title="【Css】CSS、LESS、SASS、SCSS 的区别"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Css】CSS、LESS、SASS、SCSS 的区别"/></a><div class="content"><a class="title" href="/2023/11/12/%E3%80%90Css%E3%80%91CSS%E3%80%81LESS%E3%80%81SASS%E3%80%81SCSS%20%E7%9A%84%E5%8C%BA%E5%88%AB/" title="【Css】CSS、LESS、SASS、SCSS 的区别">【Css】CSS、LESS、SASS、SCSS 的区别</a><time datetime="2023-11-11T16:00:00.000Z" title="发表于 2023-11-12 00:00:00">2023-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/09/%E3%80%90Python%E3%80%9157box%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" title="【Python】57Box自动任务脚本学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python】57Box自动任务脚本学习"/></a><div class="content"><a class="title" href="/2023/11/09/%E3%80%90Python%E3%80%9157box%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" title="【Python】57Box自动任务脚本学习">【Python】57Box自动任务脚本学习</a><time datetime="2023-11-08T16:00:00.000Z" title="发表于 2023-11-09 00:00:00">2023-11-09</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="Tiamo" target="_blank">Tiamo</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">13</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://blog.xiaoadai.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Chat-GPT/" style="font-size: 0.88rem;">Chat GPT<sup>1</sup></a><a href="/tags/Linux%E3%80%90Vi%E3%80%91/" style="font-size: 0.88rem;">Linux【Vi】<sup>1</sup></a><a href="/tags/python%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91/" style="font-size: 0.88rem;">python【爬虫】<sup>2</sup></a><a href="/tags/%E3%80%90JavaScript%E3%80%91/" style="font-size: 0.88rem;">【JavaScript】<sup>1</sup></a><a href="/tags/%E3%80%90Python%E3%80%91/" style="font-size: 0.88rem;">【Python】<sup>1</sup></a><a href="/tags/%E3%80%90Typora%E3%80%91/" style="font-size: 0.88rem;">【Typora】<sup>1</sup></a><a href="/tags/%E3%80%90%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E3%80%91/" style="font-size: 0.88rem;">【青龙面板】<sup>1</sup></a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 0.88rem;">军哥面试题<sup>14</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90CSS%E3%80%91/" style="font-size: 0.88rem;">前端【CSS】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" style="font-size: 0.88rem;">前端【JavaScript】<sup>6</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JaveScript%E3%80%91/" style="font-size: 0.88rem;">前端【JaveScript】<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Layui%E3%80%91/" style="font-size: 0.88rem;">前端【Layui】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Vue%E3%80%91/" style="font-size: 0.88rem;">前端【Vue】<sup>4</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" style="font-size: 0.88rem;">学习日常<sup>4</sup></a><a href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/" style="font-size: 0.88rem;">模拟面试<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://comment.xiaoadai.com/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.18/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://comment.xiaoadai.com/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://comment.xiaoadai.com/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.18/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

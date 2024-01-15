@@ -1,0 +1,1200 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>JavaScript 第一篇 | By Wang</title><meta name="keywords" content="学习日常"><meta name="author" content="Tiamo"><meta name="copyright" content="Tiamo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="JavaScript 第一篇"><meta name="application-name" content="JavaScript 第一篇"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="JavaScript 第一篇"><meta property="og:url" content="https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/index.html"><meta property="og:site_name" content="By Wang"><meta property="og:description" content="JavaScript 知识"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://source.fomal.cc/img/default_cover_15.webp"><meta property="article:author" content="Tiamo"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://source.fomal.cc/img/default_cover_15.webp"><meta name="description" content="JavaScript 知识"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//npm.onmicrosoft.cn"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"Tiamo","mode":"tianli","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":6,"basicWordCount":1999,"key":"207d044fe5f22c1dc77b","Referer":"https://blog.xiaoadai.com/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://comment.xiaoadai.com/',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Tiamo","link":"链接: ","source":"来源: By Wang","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'By Wang',
+  title: 'JavaScript 第一篇',
+  postAI: '',
+  pageFillDescription: '一、引言, 1.1 JavaScript简介, 1.2 JavaScript 要学习的三部分, 1.3 JavaScript发展史, 1.4 JavaScript简单例子 两种方法, 二、JavaScript基本语法, 2.1 变量声明, 2.2 基本类型, 2.2.1 Number, 2.2.2 String, 2.2.3 Boolean, 2.2.4 Null, 2.2.5 Undefined, 2.3 引用类型也就是对象的概念javascript 里面就是json, 2.4 数组类型, 2.5 Date：日期对象, 2.6 Math：数学对象, 2.5 运算符, 2.6 条件分支结构, 2.7 循环结构, 2.8 函数【重点】, 2.9 常见弹窗函数, 2.10 事件, 2.11 正则表达式基础（用途 对 表单里面用户的输入做一些限制比如手机号只能输入数字是符合要求的）, 2.12 Global：全局对象一引言简介一种解释性脚本语言是一种动态类型弱类型基于原型继承的语言内置支持类型它的解释器被称为引擎作为浏览器的一部分广泛用于客户端的脚本语言用来给网页增加动态功能脚本语言不需要编译直接就可以被浏览器解析执行了可以来增强用户和页面的交互过程可以来控制元素让页面有一些动态的效果增强用户的体验图解我们在注册和登录的时候的这些红色的提示是写的要学习的三部分语法文档对象模型浏览器对象模型发展史它是由公司的用天设计出来一门脚本语言是甲骨文公司的注册商标完整的实现包含三个部分文档对象模型浏览器对象模型在最初将其脚本语言命名为后来在与合作之后将其改名为最初受启发而开始设计的目的之一就是看上去像因此语法上有类似之处一些名称和命名规范也借自但的主要设计原则源自和与名称上的近似是当时为了营销考虑与微系统达成协议的结果为了取得技术优势微软推出了来迎战的脚本语言两者都属于的实现为了互用性欧洲计算机制造商协会创建了标准最新版本是发布的简单例子两种方法创建一个标签也是新建项目这一行写在哪里都可以没有限制必须写在标签中放在哪个位置都行尽量放在中这样的话会在执行标签前先执行还可以使用外部引用的形式把写好的的代码写到一个文件里之后再引用过来写下面的内容二基本语法变量声明在中任何变量都用关键字来声明是的缩写是声明关键字是变量名语句以分号结尾这里值得注意的是中的关键字不可以作为变量名就像在中你不可以写一样语言是强类型语言而是弱类型语言强类型在开辟变量存储空间时定义了空间将来存储的数据的数据类型只能存储固定类型的数据弱类型在开辟变量存储空间时不定义空间将来的存储数据类型可以存放任意类型的数据的部分关键字基本类型变量的基本类型又有五种数字整数小数一个不是数字的数字类型字符串字符串和一个对象为空的占位符未定义如果一个变量没有给初始化值则会被默认赋值为来声明一个数字类型如下来声明一个字符串类型你可以使用来声明一个布尔类型你可以使用在中当一个变量未被初始化的时候中是或者基本数据类型的默认值在中当一个变量未被初始化的时候它的值为下面是演示的情况当一个引用不存在时它为这个现象我们在之后的引用类型时再详细探讨常用方法里面都有方法可在字符串中抽取从下标开始的指定数目的字符方法返回的子串包括处的字符但不包括处的字符方法用于在字符串中用一些字符替换另一些字符打印数据类型图片图解可以看到这些内容相当于编译器就在浏览器上的意思就是源码引用类型也就是对象的概念里面就是在中需要类定义然后再实例对象张三在中对象可以直接写出来张三事实上被赋值为了一个就是我们在基础阶段学过的全称是叫做对象标记也就是说在中是用于标记一个对象的数组类型数组就是和我们之前理解的数组概念一致而在中成为类型创建三种方法示例示例元素列表默认长度元素列表图片图解最大区别就是字符串类型和数字类型可以放在一个数组中方法参数将数组中的元素按照指定的分隔符就是写进去的参数比如冒号拼接为字符串向数组的末尾添加一个或更多元素是有返回值的返回新的长度属性数组的长度特点中数组元素的类型可变的中数组长度可变的数组的遍历和类似数组的遍历和类似接下来我们来尝试把之前的放入数组中我是注释我也是注释张三李四王五这个是的换行的意思还有都是的标识我们看到访问这个数组第个第个第个元素都可以日期对象创建方法各个方法里面都有返回当前对象对应的时间本地字符串格式获取毫秒值返回当前如期对象描述的时间到年月日零点的毫秒值差数学对象创建特点对象不用创建直接使用方法名方法返回之间的随机数含不含对数进行上舍入对数进行下舍入把数四舍五入为最接近的整数属性运算符运算符获取变量的类型注运算后得到的是数字是一个数字类型注意没赋值的他的值是数据类型也是逻辑运算名称运算符描述与要求表达式左右两边的表达式同为整体结果才为或要求表达式左右两边的表达式只要有一个为整体结果就为非将布尔值取反操作其他类型的布尔值或为假其他为真除了空字符串为其他都是也是和都是对象所有对象都为非的逻辑与的逻辑或的逻辑短路的效果返回一个操作数注意短路效果和一致短路运算简单总结表达式表达式当表达式为时返回表达式且不会执行表达式当表达式为时返回表达式表达式表达式当表达式为时返回表达式且不会执行表达式当表达式为时返回表达式关系运算名称运算符等于小于小于或等于大于大于或等于不等于值和类型相同这里三个等于和两个等于区别前者相当于比较两个引用后者相当于比较两个值当比较两个值得时候不考虑数据类型也就是说是的单目运算自增自减名称运算符描述自增变量的值每次加再赋给变量自减变量的值每次减再赋给变量自增自减自增自减上述规则和一样双目运算符名称运算符加减乘除求余赋值加等减等除等乘等求余等相加相减相乘相除求余赋值相加后赋值相减后赋值相除后赋值相乘后赋值求余后赋值上述规则和一样三目运算符条件分支结构分支相等不相等很明显运行结果是相等这就是的结构和语言是一样的注意中的关系式如果是数字或者字符串是会自动转换成布尔值的分支同样的道理由于是弱类型的所以不想一样括号里面只能放中没有限制都会按照和判断值为值为值为值不是也不是也不是循环结构循环上述代码是对求和循环上述代码是对求和循环上述代码是对求和与关键字用于结束循环用于结束本次循环函数重点函数定义用关键字来声明后面是方法名字参数列表里不写整个方法不写返回值类型方法定义是形参的类型不用写返回值类型也不写在中方法的调用只与方法的名称有关和参数列表无关在方法声明中有一个隐藏的内置对象数组封装所有的实际参数如下面例子代表形参的个数执行的代码方法名形式参数列表方法体方法的定义与调用举例创建函数的方式创建函数方式参数列表的长度上述代码运行结果是这里定义了一个方法参数是两个与不同参数的数据类型并没有因为就算是写全都是为了保证语法的简洁性全写索性就设计成全都不用写了返回值也是同样的道理区别是如果你写了返回值那么有返回值如果没写就没有返回值在中方法的调用只与方法的名称有关和参数列表无关求任意个数参数的和总结的形参个数和数据类型要和实参一一对应但是没这个要求在中方法的调用只与方法的名称有关和参数列表无关常见弹窗函数弹框这是一个只能点击确定按钮的弹窗方法没有返回值也就是说如果用一个变量去接受返回值将会得到无论你点击确定还是右上角的那个关闭你好技巧在控制台输出内容常用于测试避免第三行输出到结果干扰中的内容弹框这是一个你可以点击确定或者取消的弹窗方法与不同他的返回值是当你点击确定时返回无论你点击取消还是右上角的那个关闭都返回你好弹框这是一个你可以输入文本内容的弹窗第一个参数是提示信息第二个参数是用户输入的默认值当你点击确定的时候返回用户输入的内容当你点击取消或者关闭的时候返回输出的结果在浏览器中中查看你爱学习吗爱事件事件名称描述元素内容改变用户点击元素用户将鼠标移入一个元素中用户在一个元素上移动鼠标用户从一个元素上移开鼠标键盘用户按下键盘按键浏览器已完成页面的加载表单提交获取焦点失去焦点就是将光标放在文本框里和移除文本框的显示内容下面是两种方法第二种方法更简单便捷可以通过元素的来控制常见事件第一种方式直接在元素里面定义我被点击了第二种方式绑定一个事件一张页面或一幅图像完成加载这里是整个页面加载完了再加载这个函数控制不加这个的话就需要把的内容放到后面单击事件我被点击了获取焦点获取到了焦点失去焦点失去焦点鼠标移到某元素之上做操作鼠标移动到文本框的时候鼠标离开文本框的时候域的内容被改变这个需要将标签调整成文中注释已下拉用于表单验证的时候才会在地址栏里面放置参数的值获取一个焦点获取到一个焦点请选择北京广州上海提交正则表达式基础用途对表单里面用户的输入做一些限制比如手机号只能输入数字是符合要求的正则表达式是描述字符模式的对象正则表达式用于对字符串模式匹配及检索替换是对字符串执行模式匹配的强大工具语法两种方法修饰符用于执行区分大小写和全局匹配修饰符描述执行对大小写不敏感的匹配执行全局匹配查找所有匹配而非在找到第一个匹配后停止执行多行匹配方括号用于查找某个范围内的字符表达式描述查找方括号之间的任何字符查找任何不在方括号之间的字符查找任何从至的数字查找任何从小写到小写的字符查找任何从大写到大写的字符查找任何从大写到小写的字符查找给定集合内的任何字符查找给定集合外的任何字符查找任何指定的选项元字符是拥有特殊含义的字符元字符描述查找单个字符除了换行和行结束符查找单词字符查找非单词字符查找数字查找非数字字符查找空白字符查找非空白字符匹配单词边界匹配非单词边界查找字符查找换行符查找换页符查找回车符查找制表符查找垂直制表符查找以八进制数规定的字符查找以十六进制数规定的字符查找以十六进制数规定的字符量词用于表示重复次数的含义量词描述匹配任何包含至少一个的字符串例如匹配中的中所有的匹配任何包含零个或多个的字符串例如匹配中的中的但是不匹配匹配任何包含零个或一个的字符串例如匹配中的中的匹配包含个的序列的字符串例如不匹配中的但是匹配中的两个且匹配中的前两个是一个正整数前面的模式连续出现至少次时匹配例如不匹配中的但是匹配和中所有的和为正整数前面的模式连续出现至少次至多次时匹配例如不匹配匹配中的中的两个匹配中的前面三个注意当匹配时即使原始字符串拥有更多的匹配项也是前面的模式连续出现次时匹配匹配任何结尾为的字符串匹配任何开头为的字符串匹配任何其后紧接指定字符串的字符串匹配任何其后没有紧接指定字符串的字符串单个字符如特殊符号代表特殊含义的单个字符单个数字字符单个单词字符量词符号表示出现次或次表示出现次或多次出现次或多次表示数量如果缺省最多次如果缺省最少次开始结束符号开始结束对象方法方法描述编译正则表达式检索字符串中指定的值返回找到的值并确定其位置检索字符串中指定的值返回或支持正则表达式的对象的方法方法描述检索与正则表达式相匹配的值找到一个或多个正则表达式的匹配替换与正则表达式匹配的子串把字符串分割为字符串数组正则表达式的使用方法搜索字符串指定的值根据结果并返回真或假方法检索字符串中的指定值返回被找到的值如果没有发现匹配则返回匹配到了未能匹配到全局对象特点全局对象这个中封装的方法不需要对象就可以直接调用方法名将字符串转为数字逐一判断每一个字符是否是数字直到不是数字为止将前边数字部分转为判断一个值是否是将字符串并把它作为脚本代码来执行',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-23 00:00:00',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">By Wang</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Chat-GPT/" style="font-size: 1.05rem;">Chat GPT<sup>1</sup></a><a href="/tags/Linux%E3%80%90Vi%E3%80%91/" style="font-size: 1.05rem;">Linux【Vi】<sup>1</sup></a><a href="/tags/python%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91/" style="font-size: 1.05rem;">python【爬虫】<sup>2</sup></a><a href="/tags/%E3%80%90JavaScript%E3%80%91/" style="font-size: 1.05rem;">【JavaScript】<sup>1</sup></a><a href="/tags/%E3%80%90Python%E3%80%91/" style="font-size: 1.05rem;">【Python】<sup>1</sup></a><a href="/tags/%E3%80%90Typora%E3%80%91/" style="font-size: 1.05rem;">【Typora】<sup>1</sup></a><a href="/tags/%E3%80%90%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E3%80%91/" style="font-size: 1.05rem;">【青龙面板】<sup>1</sup></a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem;">军哥面试题<sup>14</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90CSS%E3%80%91/" style="font-size: 1.05rem;">前端【CSS】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" style="font-size: 1.05rem;">前端【JavaScript】<sup>6</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JaveScript%E3%80%91/" style="font-size: 1.05rem;">前端【JaveScript】<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Layui%E3%80%91/" style="font-size: 1.05rem;">前端【Layui】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Vue%E3%80%91/" style="font-size: 1.05rem;">前端【Vue】<sup>4</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" style="font-size: 1.05rem;">学习日常<sup>4</sup></a><a href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/" style="font-size: 1.05rem;">模拟面试<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" itemprop="url">学习日常</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>学习日常</span></a></span></div></div><h1 class="post-title" itemprop="name headline">JavaScript 第一篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-05-22T16:00:00.000Z" title="发表于 2023-05-23 00:00:00">2023-05-23</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-05-22T16:00:00.000Z" title="更新于 2023-05-23 00:00:00">2023-05-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="JavaScript 第一篇"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为山东"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>山东</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://source.fomal.cc/img/default_cover_24.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/"><header><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" itemprop="url">学习日常</a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" tabindex="-1" itemprop="url">学习日常</a><h1 id="CrawlerTitle" itemprop="name headline">JavaScript 第一篇</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Tiamo</span><time itemprop="dateCreated datePublished" datetime="2023-05-22T16:00:00.000Z" title="发表于 2023-05-23 00:00:00">2023-05-23</time><time itemprop="dateCreated datePublished" datetime="2023-05-22T16:00:00.000Z" title="更新于 2023-05-23 00:00:00">2023-05-23</time></header><h3 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h3><hr>
+<h4 id="1-1-JavaScript简介"><a href="#1-1-JavaScript简介" class="headerlink" title="1.1 JavaScript简介"></a>1.1 JavaScript简介</h4><ul>
+<li>JavaScript一种解释性脚本语言，是一种动态类型、弱类型、基于原型继承的语言，内置支持类型。</li>
+<li>它的解释器被称为JavaScript引擎，作为浏览器的一部分，广泛用于客户端的脚本语言，用来给HTML网页增加动态功能。</li>
+<li>脚本语言：不需要编译，直接就可以被浏览器解析执行了</li>
+<li>可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://mmbiz.qpic.cn/mmbiz_png/yuXib5ZDwkiaRiawZfmw2DFoJJTx2Le8p37j9GdRIehWicdZLwXzPpz5QuSLcdcpNzbksAibC0YxalVGJ241RqpmZJw/640?wx_fmt=png&wxfrom=13&tp=wxpic" alt="图片"></p>
+<p>图解：我们在注册和登录的时候的 这些红色的提示 是 javascript写的</p>
+<h4 id="1-2-JavaScript-要学习的三部分"><a href="#1-2-JavaScript-要学习的三部分" class="headerlink" title="1.2 JavaScript 要学习的三部分"></a>1.2 JavaScript 要学习的三部分</h4><ul>
+<li>ECMAScript语法</li>
+<li>文档对象模型（DOM Document Object Model）</li>
+<li>浏览器对象模型(BOM Browser Object Model)</li>
+</ul>
+<h4 id="1-3-JavaScript发展史"><a href="#1-3-JavaScript发展史" class="headerlink" title="1.3 JavaScript发展史"></a>1.3 JavaScript发展史</h4><ul>
+<li>它是由Netscape公司的Brendan Eich用10天设计出来一门脚本语言，JavaScript是甲骨文公司的注册商标。完整的JavaScript实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。</li>
+<li>Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时Netscape为了营销考虑与Sun微系统达成协议的结果。为了取得技术优势，微软推出了JScript来迎战JavaScript的脚本语言。两者都属于ECMAScript的实现，为了互用性，ECAM（欧洲计算机制造商协会）创建了ECMA-262标准（ECMAScript）。ECMAScript最新版本是2015发布的 ECMAScript 6（ES6）。</li>
+</ul>
+<h4 id="1-4-JavaScript简单例子-两种方法"><a href="#1-4-JavaScript简单例子-两种方法" class="headerlink" title="1.4 JavaScript简单例子 两种方法"></a>1.4 JavaScript简单例子 两种方法</h4><p>创建一个&lt; script &gt;&lt; /script &gt;标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">也是新建html项目</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">    	document.write(&quot;hello,world!!&quot;)    </span><br><span class="line">      &lt;!-- 这一行写在哪里都可以，没有限制必须写在script标签中，放在哪个位置都行，尽量放在&lt;head&gt;中，这样的话会在执行body标签前先执行 --&gt;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>还可以使用外部引用的形式：把写好的的JavaScript代码写到一个文件里，之后再引用过来</p>
+<p>my.js   写下面的内容</p>
+<p>document.write(“hello,world!!”)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;script src=&quot;js/my.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="二、JavaScript基本语法"><a href="#二、JavaScript基本语法" class="headerlink" title="二、JavaScript基本语法"></a>二、JavaScript基本语法</h3><hr>
+<h4 id="2-1-变量声明"><a href="#2-1-变量声明" class="headerlink" title="2.1 变量声明"></a>2.1 变量声明</h4><ul>
+<li>在JavaScript中，任何变量都用var关键字来声明，var是variable的缩写。</li>
+<li>var是声明关键字，a是变量名，语句以分号结尾。</li>
+<li>这里值得注意的是，JavaScript中的关键字，不可以作为变量名。就像在Java中你不可以写”int int=1;”一样。</li>
+<li>Java语言是强类型语言，而JavaScript是弱类型语言。</li>
+<li>强类型：在开辟变量存储空间时，定义了空间将来存储的数据的数据类型。只能存储固定类型的数据。</li>
+<li>弱类型：在开辟变量存储空间时，不定义空间将来的存储数据类型，可以存放任意类型的数据。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>JavaScript的部分关键字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">abstract、else、instanceof、super、boolean、enum、int、switch、break、export、interface、synchronized、byte、extends、</span><br><span class="line">  let、this、case、false、long、throw、catch、final、native、throws、char、finally、new、transient、class、float、null、true、</span><br><span class="line">    const、for、package、try、continue、function、private、typeof、debugger、goto、protected、var、default、if、public、void、delete、</span><br><span class="line">  implements、return、volatile、do、import、short、while、double、in、static、with。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-2-基本类型"><a href="#2-2-基本类型" class="headerlink" title="2.2 基本类型"></a>2.2 基本类型</h4><ul>
+<li>变量的基本类型又有Number、String、Boolean、Undefined、Null五种。</li>
+<li>Number：数字。 整数/小数/NaN(not a number 一个不是数字的数字类型)</li>
+<li>String：字符串。 字符串  “abc” “a” ‘abc’</li>
+<li>Boolean: true和false</li>
+<li>Null：一个对象为空的占位符</li>
+<li>Undefined：未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined</li>
+</ul>
+<ul>
+<li>来声明一个数字Number类型，如下：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>来声明一个字符串String类型。</li>
+<li>你可以使用:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=&quot;1&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>来声明一个布尔Boolean类型。</li>
+<li>你可以使用：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=false;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在Java中，当一个变量未被初始化的时候，Java中是null或者基本数据类型的默认值。</li>
+<li>在JavaScript中，当一个变量未被初始化的时候，它的值为undefined。</li>
+<li>下面是演示undefined的情况：(当一个引用不存在时，它为Null。这个现象我们在之后的引用类型时再详细探讨)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">document.write(a);</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-2-1-Number"><a href="#2-2-1-Number" class="headerlink" title="2.2.1 Number"></a>2.2.1 Number</h5><h5 id="2-2-2-String"><a href="#2-2-2-String" class="headerlink" title="2.2.2 String"></a>2.2.2 String</h5><p><strong>常用方法：w3c里面都有</strong></p>
+<p>indexof<br>substr(start,length) 方法可在字符串中抽取从 start 下标开始的指定数目的字符。<br>substring(start,stop) 方法返回的子串包括 start 处的字符，但不包括 stop 处的字符。<br>replace(regexp/substr,replacement) 方法用于在字符串中用一些字符替换另一些字符</p>
+<p>typeof() 打印数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> var str  = &quot;hello  world&quot;;</span><br><span class="line">document.write(str.indexOf(&quot;world&quot;)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">document.write(str.substr(1,3)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">document.write(str.substring(1,3)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">document.write(str.replace(&quot;o&quot;,&#x27; &#x27;)+&quot;&lt;br/&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>![图片](data:image/svg+xml,%3C%3Fxml version=’1.0’ encoding=’UTF-8’%3F%3E%3Csvg width=’1px’ height=’1px’ viewBox=’0 0 1 1’ version=’1.1’ xmlns=’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&#39;">http://www.w3.org/2000/svg&#39;</a> xmlns:xlink=’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke=’none’ stroke-width=’1’ fill=’none’ fill-rule=’evenodd’ fill-opacity=’0’%3E%3Cg transform=’translate(-249.000000, -126.000000)’ fill=’%23FFFFFF’%3E%3Crect x=’249’ y=’126’ width=’1’ height=’1’%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</p>
+<p>图解：f12可以看到这些内容，相当于编译器就在浏览器上，source的意思就是源码</p>
+<h5 id="2-2-3-Boolean"><a href="#2-2-3-Boolean" class="headerlink" title="2.2.3 Boolean"></a>2.2.3 Boolean</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var flag = new Boolean(&quot;null&quot;);//object</span><br><span class="line">document.write(flag+&quot;:&quot;+typeof(flag)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">var num = new Number(3);//object</span><br><span class="line">document.write(num+&quot;:&quot;+typeof(flag)+&quot;&lt;br/&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-2-4-Null"><a href="#2-2-4-Null" class="headerlink" title="2.2.4 Null"></a>2.2.4 Null</h5><h5 id="2-2-5-Undefined"><a href="#2-2-5-Undefined" class="headerlink" title="2.2.5 Undefined"></a>2.2.5 Undefined</h5><h4 id="2-3-引用类型，也就是对象的概念，javascript-里面就是json"><a href="#2-3-引用类型，也就是对象的概念，javascript-里面就是json" class="headerlink" title="2.3 引用类型，也就是对象的概念，javascript 里面就是json"></a>2.3 引用类型，也就是对象的概念，javascript 里面就是json</h4><p>在Java中需要类定义，然后再实例对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Student&#123;</span><br><span class="line">  public int id;</span><br><span class="line">  public String name;</span><br><span class="line">  public int age;</span><br><span class="line">&#125;</span><br><span class="line">public class Test&#123;</span><br><span class="line">    public static void main(String [] args)&#123;</span><br><span class="line">        Student student=new Student();</span><br><span class="line">      	student.id=1;</span><br><span class="line">      	student.name=&quot;张三&quot;;</span><br><span class="line">      	student.age=18;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在JavaScript中对象可以直接写出来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var student=&#123;id:1,name:&quot;张三&quot;,age:18&#125;;</span><br><span class="line">document.write(student.id);</span><br><span class="line">document.write(student.name);</span><br><span class="line">document.write(student.age);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>事实上，student被赋值为了一个JSON，JSON就是我们在Java基础阶段学过的，全称是JavaScript Object Notation，叫做JavaScript对象标记，也就是说，在JavaScript中，JSON是用于标记一个对象的。</p>
+<h4 id="2-4-数组类型"><a href="#2-4-数组类型" class="headerlink" title="2.4 数组类型"></a>2.4 数组类型</h4><ul>
+<li>数组就是和我们之前理解的数组概念一致，而在JavaScript中成为Array类型。</li>
+</ul>
+<ol>
+<li>创建，三种方法</li>
+</ol>
+<p>java示例：int[] arr = new int[5];</p>
+<p>​     int[] arr = new int[]{3,5,1,7};</p>
+<p>​        int[] arr = {3,5,1,7};</p>
+<p>javascript示例：var arr = new Array(元素列表);</p>
+<p>var arr = new Array(默认长度);</p>
+<p>var arr = [元素列表];</p>
+<p>![图片](data:image/svg+xml,%3C%3Fxml version=’1.0’ encoding=’UTF-8’%3F%3E%3Csvg width=’1px’ height=’1px’ viewBox=’0 0 1 1’ version=’1.1’ xmlns=’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&#39;">http://www.w3.org/2000/svg&#39;</a> xmlns:xlink=’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke=’none’ stroke-width=’1’ fill=’none’ fill-rule=’evenodd’ fill-opacity=’0’%3E%3Cg transform=’translate(-249.000000, -126.000000)’ fill=’%23FFFFFF’%3E%3Crect x=’249’ y=’126’ width=’1’ height=’1’%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</p>
+<p>图解：最大区别就是 字符串类型true和数字类型1 可以放在一个数组中</p>
+<ol>
+<li><p>方法<br>join(参数):将数组中的元素按照指定的分隔符（就是写进去的参数，比如冒号：）拼接为字符串<br>push():向数组的末尾添加一个或更多元素，是有返回值的，返回新的长度。</p>
+</li>
+<li><p>属性<br>length:数组的长度</p>
+</li>
+<li><p>特点：</p>
+</li>
+<li><ol>
+<li>JS中，数组元素的类型可变的。</li>
+<li>JS中，数组长度可变的。</li>
+<li>数组的遍历，和java类似</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array(1,3,5,4)</span><br><span class="line"></span><br><span class="line">       //</span><br><span class="line">       var arr2 = new Array(5);</span><br><span class="line">       arr2[0]=1;</span><br><span class="line"></span><br><span class="line">       var arr3 = [1,3,4,6,7,&#x27;true&#x27;,true]</span><br><span class="line"></span><br><span class="line">       document.write(arr+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">       document.write(arr2+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">       document.write(arr3+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       document.write(arr3.join(&quot;-&quot;)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">       arr3.push(&#x27;str&#x27;);</span><br><span class="line"></span><br><span class="line">       document.write(&quot;----------------&lt;br/&gt;&quot;);</span><br><span class="line">       document.write(arr3+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line"> 		var arr4 = [1,2,5,6,7];</span><br><span class="line">       var length = arr.push(&#x27;true&#x27;,3,6);</span><br><span class="line">       alert(length);</span><br><span class="line">       var ele = arr.pop();</span><br><span class="line">       alert(ele);</span><br><span class="line">	//数组的遍历，和java类似</span><br><span class="line">       for(var i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">           document.write(arr[i]+&quot;&lt;br\&gt;&quot;);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>接下来我们来尝试把之前的JSON放入数组中：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//我是注释</span><br><span class="line">/*我也是注释*/</span><br><span class="line">var students = [</span><br><span class="line">    &#123;id: 1,name: &quot;张三&quot;,age: 18&#125;,</span><br><span class="line">    &#123;id: 2,name: &quot;李四&quot;,age: 18&#125;,</span><br><span class="line">    &#123;id: 3,name: &quot;王五&quot;,age: 19&#125;</span><br><span class="line">];</span><br><span class="line">document.write(students[0].id);</span><br><span class="line">document.write(students[0].name);</span><br><span class="line">document.write(students[0].age);</span><br><span class="line">document.write(&quot;&lt;br&gt;&quot;);//这个是html的换行的意思 ，还有 &lt;hr&gt; 都是html的标识</span><br><span class="line">document.write(students[1].id);</span><br><span class="line">document.write(students[1].name);</span><br><span class="line">document.write(students[1].age);</span><br><span class="line">document.write(&quot;&lt;br&gt;&quot;);</span><br><span class="line">document.write(students[2].id);</span><br><span class="line">document.write(students[2].name);</span><br><span class="line">document.write(students[2].age);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我们看到，访问students这个数组，第0个，第1个，第2个元素，都可以。</p>
+<h4 id="2-5-Date：日期对象"><a href="#2-5-Date：日期对象" class="headerlink" title="2.5 Date：日期对象"></a>2.5 Date：日期对象</h4><ol>
+<li>创建：<br>var date = new Date();</li>
+<li>方法：（各个方法w3c里面都有）<br>toLocaleString()：返回当前date对象对应的时间本地字符串格式<br>getTime():获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var date= new Date();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      var dateStr = date.getFullYear()+&quot;-&quot;+(date.getMonth()+1)+&quot;-&quot;+date.getDate();</span><br><span class="line"></span><br><span class="line">      document.write(dateStr+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">      document.write(date.toLocaleString()+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">      document.write(date.getTime()+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">      document.write(date+&quot;&lt;br/&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-6-Math：数学对象"><a href="#2-6-Math：数学对象" class="headerlink" title="2.6 Math：数学对象"></a>2.6 Math：数学对象</h4><ol>
+<li>创建：</li>
+</ol>
+<ul>
+<li><ul>
+<li>特点：Math对象不用创建，直接使用。  Math.方法名();</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>方法：<br>random():返回 0 ~ 1 之间的随机数。 含0不含1<br>ceil(x)：对数进行上舍入。<br>floor(x)：对数进行下舍入。<br>round(x)：把数四舍五入为最接近的整数。</li>
+<li>属性：<br>PI</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var radom = Math.random();</span><br><span class="line"></span><br><span class="line">       document.write(radom+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">       document.write(Math.floor(3.45)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">       document.write(Math.ceil(3.45)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">       document.write(Math.round(3.45)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">       document.write(Math.PI+&quot;&lt;br/&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-5-运算符"><a href="#2-5-运算符" class="headerlink" title="2.5 运算符"></a>2.5 运算符</h4><p>typeof运算符：获取变量的类型。</p>
+<p>注：null运算后得到的是object</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//number数字；</span><br><span class="line">        var num = 1;</span><br><span class="line">        var num2 = 1.1</span><br><span class="line">        var num3 = NaN;    //NaN是一个数字类型</span><br><span class="line"></span><br><span class="line">        document.write(num+&quot;:&quot;+typeof(num)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        document.write(num2+&quot;:&quot;+typeof(num2)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        document.write(num3+&quot;:&quot;+typeof(num3)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line">        var str = &#x27;acc&#x27;;</span><br><span class="line">        document.write(str+&quot;:&quot;+typeof(str)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line">        var flag =true;</span><br><span class="line">        document.write(flag+&quot;:&quot;+typeof(flag)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line">        var obj = null;</span><br><span class="line">        document.write(obj+&quot;:&quot;+typeof(obj)+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line">        var obj2 ;</span><br><span class="line">        document.write(obj2+&quot;:&quot;+typeof(obj2)+&quot;&lt;br/&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>注意: 没赋值的obj2 ，他的值是Undefined，数据类型也是Undefined</p>
+<p>逻辑运算</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>与</td>
+<td>&amp;&amp;</td>
+<td>要求表达式左右两边的表达式同为true，整体结果才为true</td>
+</tr>
+<tr>
+<td>或</td>
+<td>||</td>
+<td>要求表达式左右两边的表达式只要有一个为true，整体结果就为true</td>
+</tr>
+<tr>
+<td>非</td>
+<td>！</td>
+<td>将布尔值取反操作</td>
+</tr>
+</tbody></table>
+<p>其他类型的布尔值：</p>
+<ol>
+<li>number：0或NaN为假，其他为真</li>
+<li>string：除了空字符串(“”)为false，其他都是true，”null”也是true</li>
+<li>null和undefined:都是false</li>
+<li>对象：所有对象都为true</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">var a=false;</span><br><span class="line">var b=true;</span><br><span class="line">//非的逻辑</span><br><span class="line">//!a-&gt;true;</span><br><span class="line">//!b-&gt;false;</span><br><span class="line">//与的逻辑</span><br><span class="line">//a&amp;&amp;a-&gt;false;</span><br><span class="line">//a&amp;&amp;b-&gt;false;</span><br><span class="line">//b&amp;&amp;a-&gt;false;</span><br><span class="line">//b&amp;&amp;b-&gt;true;</span><br><span class="line">//或的逻辑</span><br><span class="line">//a||a-&gt;false;</span><br><span class="line">//a||b-&gt;true;</span><br><span class="line">//b||a-&gt;true;</span><br><span class="line">//b||b-&gt;true;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//	</span><br><span class="line">	    var num = 0;</span><br><span class="line">        var num2 = NaN;</span><br><span class="line">        var num3 = 3;</span><br><span class="line"></span><br><span class="line">        document.write(!!num+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        document.write(!!num2+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        document.write(!!num3+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        var a = null;</span><br><span class="line">        var b = undefined;</span><br><span class="line">        document.write(!!a+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        document.write(!!b+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        var str = &#x27;&#x27;;</span><br><span class="line">        var str2 = &#x27;abc&#x27;;</span><br><span class="line"></span><br><span class="line">        document.write(!!str+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        document.write(!!str2+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line">        var date = new Date();</span><br><span class="line">        document.write(!!date+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;hr&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        var aa = &quot;null&quot;;</span><br><span class="line">        document.write(!!aa+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        //短路的效果，返回一个操作数</span><br><span class="line">        var flag = &quot;null&quot;&amp;&amp; &quot;wowo&quot;;</span><br><span class="line">        document.write(flag+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        var flag2 = NaN &amp;&amp; &quot;wowo&quot;;</span><br><span class="line">        document.write(flag2+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //</span><br><span class="line">        //</span><br><span class="line">        var flag3 = NaN || &quot;&quot;;</span><br><span class="line">        document.write(flag3+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        //</span><br><span class="line">        //</span><br><span class="line">        var flag4 = null || true;</span><br><span class="line">        document.write(flag4+&quot;&lt;br/&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>注意：短路效果和java一致</p>
+<p>短路运算简单总结</p>
+<p>&amp;&amp;：表达式1 &amp;&amp; 表达式2</p>
+<p>当 表达式1 为false时，返回 表达式1，且不会执行 表达式2</p>
+<p>当 表达式1 为true时，返回 表达式2</p>
+<p>||：表达式1 || 表达式2</p>
+<p>当 表达式1 为true时，返回 表达式1 ，且不会执行 表达式2</p>
+<p>当 表达式1 为false时，返回 表达式2</p>
+<p>关系运算</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>等于</td>
+<td>==</td>
+</tr>
+<tr>
+<td>小于</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td>小于或等于</td>
+<td>&lt;=</td>
+</tr>
+<tr>
+<td>大于</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>大于或等于</td>
+<td>&gt;=</td>
+</tr>
+<tr>
+<td>不等于</td>
+<td>!=</td>
+</tr>
+<tr>
+<td>值和类型相同</td>
+<td>===</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var b=2;</span><br><span class="line">//a==a-&gt;true</span><br><span class="line">//a==b-&gt;false</span><br><span class="line">//a&lt;b-&gt;false</span><br><span class="line">//a&lt;=b-&gt;false</span><br><span class="line">//a&gt;b-&gt;true</span><br><span class="line">//a&gt;=b-&gt;true</span><br><span class="line">//a!=b-&gt;true</span><br><span class="line">//a===b-&gt;false</span><br><span class="line">//这里三个等于“===”和两个等于“==”区别：</span><br><span class="line">//前者相当于比较两个引用，后者相当于比较两个值。</span><br><span class="line">//当比较两个值得时候，不考虑数据类型。</span><br><span class="line">//也就是说1==&quot;1&quot;是true的。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>单目运算：自增自减</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自增</td>
+<td>++</td>
+<td>变量的值每次加1，再赋给变量</td>
+</tr>
+<tr>
+<td>自减</td>
+<td>–</td>
+<td>变量的值每次减1，再赋给变量</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">a++;//自增</span><br><span class="line">a--;//自减</span><br><span class="line">++a;//自增</span><br><span class="line">--a;//自减</span><br><span class="line">//上述规则和Java一样。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>双目运算符</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加</td>
+<td>+</td>
+</tr>
+<tr>
+<td>减</td>
+<td>-</td>
+</tr>
+<tr>
+<td>乘</td>
+<td>*</td>
+</tr>
+<tr>
+<td>除</td>
+<td>/</td>
+</tr>
+<tr>
+<td>求余</td>
+<td>%</td>
+</tr>
+<tr>
+<td>赋值</td>
+<td>=</td>
+</tr>
+<tr>
+<td>加等</td>
+<td>+=</td>
+</tr>
+<tr>
+<td>减等</td>
+<td>-=</td>
+</tr>
+<tr>
+<td>除等</td>
+<td>/=</td>
+</tr>
+<tr>
+<td>乘等</td>
+<td>*=</td>
+</tr>
+<tr>
+<td>求余等</td>
+<td>%=</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var b=2;</span><br><span class="line">a+b;//相加</span><br><span class="line">a-b;//相减</span><br><span class="line">a*b;//相乘</span><br><span class="line">a/b;//相除</span><br><span class="line">a%b;//求余</span><br><span class="line">a=b;//赋值</span><br><span class="line">a+=b;//相加后赋值</span><br><span class="line">a-=b;//相减后赋值</span><br><span class="line">a/=b;//相除后赋值</span><br><span class="line">a*=b;//相乘后赋值</span><br><span class="line">a%=b;//求余后赋值</span><br><span class="line">//上述规则和Java一样。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>三目运算符： ?:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var kk=100;	</span><br><span class="line">document.write(kk&gt;100?true:false);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-6-条件分支结构"><a href="#2-6-条件分支结构" class="headerlink" title="2.6 条件分支结构"></a>2.6 条件分支结构</h4><p>if-else分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var b=1;</span><br><span class="line">if(a==b)&#123;</span><br><span class="line">    document.write(&quot;相等&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    document.write(&quot;不相等&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//很明显，运行结果是相等</span><br><span class="line">//这就是if-else的结构，和Java语言是一样的。</span><br></pre></td></tr></table></figure>
+
+<p>注意：if（）中的关系式如果是数字或者字符串，是会自动转换成布尔值的</p>
+<p>switch分支,同样的道理，由于javascript是弱类型的，所以 不想java一样，switch() 括号里面只能放byte,short,int ，js中没有限制，都会按照true和false判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var a=2;</span><br><span class="line">switch(a)&#123;</span><br><span class="line">  case 1:</span><br><span class="line">    document.write(&quot;值为1&quot;);</span><br><span class="line">    break;</span><br><span class="line">  case 2:</span><br><span class="line">    document.write(&quot;值为2&quot;);</span><br><span class="line">    break;</span><br><span class="line">  case 3:</span><br><span class="line">    document.write(&quot;值为3&quot;);</span><br><span class="line">    break;</span><br><span class="line">  default:</span><br><span class="line">     document.write(&quot;值不是3也不是2也不是1&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-7-循环结构"><a href="#2-7-循环结构" class="headerlink" title="2.7 循环结构"></a>2.7 循环结构</h4><p>for循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a=0;</span><br><span class="line">for(var i=1;i&lt;=100;i++)&#123;</span><br><span class="line">    a+=i;</span><br><span class="line">&#125;</span><br><span class="line">document.write(a);</span><br><span class="line">//上述代码是对1~100求和。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>while循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a=0;</span><br><span class="line">var i=1;</span><br><span class="line">while(i&lt;=100)&#123;</span><br><span class="line">   a+=i;</span><br><span class="line">   i++;</span><br><span class="line">&#125;</span><br><span class="line">document.write(a);</span><br><span class="line">//上述代码是对1~100求和。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>do-while循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a=0;</span><br><span class="line">var i=1;</span><br><span class="line">do&#123;</span><br><span class="line">    a+=i;</span><br><span class="line">  	i++;</span><br><span class="line">&#125;while(i&lt;=100);</span><br><span class="line">document.write(a);</span><br><span class="line">//上述代码是对1~100求和。</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>break与continue关键字</p>
+</li>
+<li><ul>
+<li>break用于结束循环</li>
+<li>continue用于结束本次循环</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-8-函数【重点】"><a href="#2-8-函数【重点】" class="headerlink" title="2.8 函数【重点】"></a>2.8 函数【<code>重点</code>】</h4><p>函数定义：用function关键字来声明，后面是方法名字，参数列表里不写var。整个方法不写返回值类型。</p>
+<ol>
+<li>方法定义是，形参的类型不用写,返回值类型也不写。</li>
+<li>在JS中，方法的调用只与方法的名称有关，和参数列表无关</li>
+<li>在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数，如下面例子3<br>length:代表形参的个数</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function functionName(parameters)&#123;</span><br><span class="line">    //执行的代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var 方法名 = function(形式参数列表)&#123;</span><br><span class="line">    方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>方法的定义与调用举例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">1，创建函数的方式1：</span><br><span class="line">function  fun1(a,b)&#123;</span><br><span class="line">    alert(a+b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1(3,4);</span><br><span class="line"></span><br><span class="line">创建函数方式2：</span><br><span class="line">var fun2 = function(a,b)&#123;</span><br><span class="line">    alert(a-b);</span><br><span class="line">&#125;</span><br><span class="line">fun2(3,4);</span><br><span class="line">alert(fun2.length);//参数列表的长度</span><br><span class="line"></span><br><span class="line">2，</span><br><span class="line">function add(a,b)&#123;</span><br><span class="line">    return a+b;</span><br><span class="line">&#125;</span><br><span class="line">var c=1;</span><br><span class="line">var d=2;</span><br><span class="line">var e=add(1,2);</span><br><span class="line">document.write(e);</span><br><span class="line">//上述代码运行结果是3</span><br><span class="line">//这里定义了一个add方法，参数是两个，与Java不同，参数的数据类型并没有。</span><br><span class="line">//因为就算是写，全都是var，为了保证语法的简洁性，全写var索性就设计成全都不用写了。</span><br><span class="line">//返回值也是同样的道理，区别是，如果你写了返回值，那么有返回值，如果没写return，就没有返回值。</span><br><span class="line"></span><br><span class="line">//在JS中，方法的调用只与方法的名称有关，和参数列表无关</span><br><span class="line">function fun5(a,b,c)&#123;</span><br><span class="line">   alert(a);</span><br><span class="line">   alert(b);</span><br><span class="line">   alert(c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun5(1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//3,求任意个数参数的和</span><br><span class="line">var fun =function()&#123;</span><br><span class="line">  	//alert(arguments.length);</span><br><span class="line">  	// alert(arguments[0]);</span><br><span class="line">  	// alert(arguments[1]);</span><br><span class="line">  	// alert(arguments[2]);</span><br><span class="line">  	var sum = 0;</span><br><span class="line">  	for(var i=0;i&lt;arguments.length;i++)&#123;</span><br><span class="line">  	    sum +=arguments[i];</span><br><span class="line">  	&#125;</span><br><span class="line">		document.write(&quot;sum:&quot;+sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(1,2,3,4,5);</span><br></pre></td></tr></table></figure>
+
+<p>总结：java的形参个数和数据类型要和实参一一对应，但是js 没这个要求，在JS中，方法的调用只与方法的名称有关，和参数列表无关</p>
+<h4 id="2-9-常见弹窗函数"><a href="#2-9-常见弹窗函数" class="headerlink" title="2.9 常见弹窗函数"></a>2.9 常见弹窗函数</h4><ul>
+<li>alert弹框：这是一个只能点击确定按钮的弹窗</li>
+<li>alert方法没有返回值，也就是说如果用一个变量去接受返回值，将会得到undefined。无论你点击“确定”还是右上角的那个“X“关闭。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&quot;你好&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>js技巧：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://mmbiz.qpic.cn/mmbiz_png/yuXib5ZDwkiaRiawZfmw2DFoJJTx2Le8p37oqFlGOggqn6WtgPWrhCmtNtElm8h8rI3e4wvTP7qmlJe0FeiagUX0ibg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>console.log() 在控制台输出内容，常用于测试，避免第三行输出到结果，干扰body中的内容</p>
+<ul>
+<li>confirm弹框：这是一个你可以点击确定或者取消的弹窗</li>
+<li>confirm方法与alert不同，他的返回值是boolean，当你点击“确定”时，返回true，无论你点击“取消”还是右上角的那个“X“关闭，都返回false。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">confirm(&quot;你好&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li><p>prompt弹框：这是一个你可以输入文本内容的弹窗</p>
+</li>
+<li><ul>
+<li>第一个参数是提示信息，第二个参数是用户输入的默认值。</li>
+</ul>
+</li>
+<li><p>当你点击确定的时候，返回用户输入的内容。当你点击取消或者关闭的时候，返回null，输出的结果在浏览器中f12，console中查看</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prompt(&quot;你爱学习吗？&quot;,&quot;爱&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-10-事件"><a href="#2-10-事件" class="headerlink" title="2.10 事件"></a>2.10 事件</h4><table>
+<thead>
+<tr>
+<th>事件名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onchange</td>
+<td>HTML 元素内容改变</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>用户点击 HTML 元素</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>用户将鼠标移入一个HTML元素中</td>
+</tr>
+<tr>
+<td>onmousemove</td>
+<td>用户在一个HTML元素上移动鼠标</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>用户从一个HTML元素上移开鼠标</td>
+</tr>
+<tr>
+<td>onkeyup</td>
+<td>键盘</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>用户按下键盘按键</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>浏览器已完成页面的加载</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>表单提交</td>
+</tr>
+<tr>
+<td>onfocus ,onblur</td>
+<td>获取焦点，失去焦点，就是将光标放在文本框里，和移除文本框的显示内容</td>
+</tr>
+</tbody></table>
+<p>下面是两种方法，第二种方法更简单便捷，可以通过元素的id来控制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;常见事件&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">        //第一种方式：直接在元素里面定义onclick;</span><br><span class="line">        // function clickFun()&#123;</span><br><span class="line">        //     alert(&quot;我被点击了&quot;);</span><br><span class="line">        // &#125;</span><br><span class="line"></span><br><span class="line">        //第二种方式：绑定一个事件</span><br><span class="line"></span><br><span class="line">        //1. onload：一张页面或一幅图像完成加载。</span><br><span class="line">        window.onload=function()&#123;    //这里是整个页面加载完了，再加载这个函数控制，不加这个windows.onload的话，就需要把&lt;script&gt;的内容放到&lt;body&gt;后面</span><br><span class="line">            //单击事件：onclick</span><br><span class="line">            // document.getElementById(&quot;username&quot;).onclick=function()&#123;</span><br><span class="line">            //     alert(&quot;我被点击了&quot;);</span><br><span class="line">            // &#125;</span><br><span class="line"></span><br><span class="line">            //获取焦点</span><br><span class="line">            // document.getElementById(&quot;username&quot;).onfocus=function()&#123;</span><br><span class="line">            //     alert(&quot;获取到了焦点&quot;);</span><br><span class="line">            // &#125;</span><br><span class="line">            </span><br><span class="line">            // //失去焦点</span><br><span class="line">            // document.getElementById(&quot;username&quot;).onblur=function()&#123;</span><br><span class="line">            //     alert(&quot;失去焦点&quot;);</span><br><span class="line">            // &#125;</span><br><span class="line">          </span><br><span class="line">            //鼠标移到某元素之上，做操作</span><br><span class="line">            // document.getElementById(&quot;username&quot;).onmouseover=function()&#123;</span><br><span class="line">            //     alert(&quot;鼠标移动到文本框的时候&quot;);</span><br><span class="line">            // &#125;</span><br><span class="line"></span><br><span class="line">            // document.getElementById(&quot;username&quot;).onmouseout=function()&#123;</span><br><span class="line">            //     alert(&quot;鼠标离开文本框的时候&quot;);</span><br><span class="line">            // &#125;</span><br><span class="line"></span><br><span class="line">            //onchange	域的内容被改变。这个需要将select标签调整成 文中注释：&lt;!--&lt;select id=&quot;sel&quot; onchange=&quot;changeFun();&quot;&gt; --&gt;</span><br><span class="line">            document.getElementById(&quot;sel&quot;).onchange=function()&#123;</span><br><span class="line">                alert(&quot;已下拉&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //用于表单验证，return true的时候才会在地址栏里面 放置username参数的值</span><br><span class="line">            document.getElementById(&quot;form&quot;).onsubmit=function()  &#123;</span><br><span class="line">               return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //</span><br><span class="line">        // function fun3()&#123;</span><br><span class="line">        //</span><br><span class="line">        //     //document.write(&quot;获取一个焦点&quot;+&quot;&lt;br/&gt;&quot;);</span><br><span class="line">        //     alert(&quot;获取到一个焦点&quot;);</span><br><span class="line">        // &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;form id=&quot;form&quot; action=&quot;#&quot; method=&quot;get&quot;&gt;</span><br><span class="line">        &lt;!--&lt;input  id=&quot;username&quot; name=&quot;username&quot; onclick=&quot;clickFun();&quot;/&gt;--&gt;</span><br><span class="line">        &lt;input  id=&quot;username&quot; name=&quot;username&quot; type=&quot;text&quot;/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;select id=&quot;sel&quot;&gt; </span><br><span class="line">        &lt;!--&lt;select id=&quot;sel&quot; onchange=&quot;changeFun();&quot;&gt; --&gt;</span><br><span class="line">            &lt;option&gt;请选择&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;北京&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;广州&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;上海&lt;/option&gt;</span><br><span class="line">        &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-11-正则表达式基础（用途-对-表单里面用户的输入做一些限制，比如手机号只能输入数字是符合要求的）"><a href="#2-11-正则表达式基础（用途-对-表单里面用户的输入做一些限制，比如手机号只能输入数字是符合要求的）" class="headerlink" title="2.11 正则表达式基础（用途 对 表单里面用户的输入做一些限制，比如手机号只能输入数字是符合要求的）"></a>2.11 正则表达式基础（用途 对 表单里面用户的输入做一些限制，比如手机号只能输入数字是符合要求的）</h4><ul>
+<li><p>正则表达式是描述字符模式的对象。</p>
+</li>
+<li><p>正则表达式用于对字符串模式匹配及检索替换，是对字符串执行模式匹配的强大工具。</p>
+</li>
+<li><p>语法：两种方法</p>
+</li>
+<li><ul>
+<li>var patt=new RegExp(pattern,modifiers);</li>
+<li>var patt=/pattern/modifiers;</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var re = new RegExp(&quot;\\w+&quot;);</span><br><span class="line">var re = /\w+/;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>修饰符：用于执行区分大小写和全局匹配:</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>执行对大小写不敏感的匹配。</td>
+</tr>
+<tr>
+<td>g</td>
+<td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</td>
+</tr>
+<tr>
+<td>m</td>
+<td>执行多行匹配。</td>
+</tr>
+</tbody></table>
+<p>方括号：用于查找某个范围内的字符</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[abc]</td>
+<td>查找方括号之间的任何字符。</td>
+</tr>
+<tr>
+<td>[^abc]</td>
+<td>查找任何不在方括号之间的字符。</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>查找任何从 0 至 9 的数字。</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>查找任何从小写 a 到小写 z 的字符。</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>查找任何从大写 A 到大写 Z 的字符。</td>
+</tr>
+<tr>
+<td>[A-z]</td>
+<td>查找任何从大写 A 到小写 z 的字符。</td>
+</tr>
+<tr>
+<td>[adgk]</td>
+<td>查找给定集合内的任何字符。</td>
+</tr>
+<tr>
+<td>[^adgk]</td>
+<td>查找给定集合外的任何字符。</td>
+</tr>
+<tr>
+<td>(red|blue|green)</td>
+<td>查找任何指定的选项。</td>
+</tr>
+</tbody></table>
+<p>元字符（Metacharacter）：是拥有特殊含义的字符：</p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>查找单个字符，除了换行和行结束符。</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>查找单词字符。</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>查找非单词字符。</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>查找数字。</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>查找非数字字符。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>查找空白字符。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>查找非空白字符。</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词边界。</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界。</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>查找 NULL 字符。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>查找换行符。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>查找换页符。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>查找回车符。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>查找制表符。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>查找垂直制表符。</td>
+</tr>
+<tr>
+<td>\xxx</td>
+<td>查找以八进制数 xxx 规定的字符。</td>
+</tr>
+<tr>
+<td>\xdd</td>
+<td>查找以十六进制数 dd 规定的字符。</td>
+</tr>
+<tr>
+<td>\uxxxx</td>
+<td>查找以十六进制数 xxxx 规定的 Unicode 字符。</td>
+</tr>
+</tbody></table>
+<p>量词：用于表示重复次数的含义</p>
+<table>
+<thead>
+<tr>
+<th>量词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n+</td>
+<td>匹配任何包含至少一个 n 的字符串。例如，/a+/ 匹配 “candy” 中的 “a”，”caaaaaaandy” 中所有的 “a”。</td>
+</tr>
+<tr>
+<td>n*</td>
+<td>匹配任何包含零个或多个 n 的字符串。例如，/bo*/ 匹配 “A ghost booooed” 中的 “boooo”，”A bird warbled” 中的 “b”，但是不匹配 “A goat grunted”。</td>
+</tr>
+<tr>
+<td>n?</td>
+<td>匹配任何包含零个或一个 n 的字符串。例如，/e?le?/ 匹配 “angel” 中的 “el”，”angle” 中的 “le”。</td>
+</tr>
+<tr>
+<td>n{X}</td>
+<td>匹配包含 X 个 n 的序列的字符串。例如，/a{2}/ 不匹配 “candy,” 中的 “a”，但是匹配 “caandy,” 中的两个 “a”，且匹配 “caaandy.” 中的前两个 “a”。</td>
+</tr>
+<tr>
+<td>n{X,}</td>
+<td>X 是一个正整数。前面的模式 n 连续出现至少 X 次时匹配。例如，/a{2,}/ 不匹配 “candy” 中的 “a”，但是匹配 “caandy” 和 “caaaaaaandy.” 中所有的 “a”。</td>
+</tr>
+<tr>
+<td>n{X,Y}</td>
+<td>X 和 Y 为正整数。前面的模式 n 连续出现至少 X 次，至多 Y 次时匹配。例如，/a{1,3}/ 不匹配 “cndy”，匹配 “candy,” 中的 “a”，”caandy,” 中的两个 “a”，匹配 “caaaaaaandy” 中的前面三个 “a”。注意，当匹配 “caaaaaaandy” 时，即使原始字符串拥有更多的 “a”，匹配项也是 “aaa”。</td>
+</tr>
+<tr>
+<td>n{X}</td>
+<td>前面的模式 n 连续出现X 次时匹配</td>
+</tr>
+<tr>
+<td>n$</td>
+<td>匹配任何结尾为 n 的字符串。</td>
+</tr>
+<tr>
+<td>^n</td>
+<td>匹配任何开头为 n 的字符串。</td>
+</tr>
+<tr>
+<td>?=n</td>
+<td>匹配任何其后紧接指定字符串 n 的字符串。</td>
+</tr>
+<tr>
+<td>?!n</td>
+<td>匹配任何其后没有紧接指定字符串 n 的字符串。</td>
+</tr>
+</tbody></table>
+<ol>
+<li>单个字符:[]<br>如： <code>[a] [ab] [a-zA-Z0-9_]</code></li>
+</ol>
+<ul>
+<li><ul>
+<li>特殊符号代表特殊含义的单个字符:<br><code>\d:单个数字字符 [0-9]</code><br><code>\w:单个单词字符[a-zA-Z0-9_]</code></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>量词符号：<br><code>?：表示出现0次或1次</code><br><code>*：表示出现0次或多次</code><br><code>+：出现1次或多次</code><br><code>&#123;m,n&#125;:表示 m&lt;= 数量 &lt;= n</code></li>
+</ol>
+<ul>
+<li><ul>
+<li>m如果缺省： {,n}:最多n次</li>
+<li>n如果缺省：{m,} 最少m次</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>开始结束符号</li>
+</ol>
+<ul>
+<li><ul>
+<li>^:开始</li>
+<li>$:结束</li>
+</ul>
+</li>
+</ul>
+<p>RegExp 对象方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile</td>
+<td>编译正则表达式。</td>
+</tr>
+<tr>
+<td>exec</td>
+<td>检索字符串中指定的值。返回找到的值，并确定其位置。</td>
+</tr>
+<tr>
+<td>test</td>
+<td>检索字符串中指定的值。返回 true 或 false。</td>
+</tr>
+</tbody></table>
+<p>支持正则表达式的 String 对象的方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>search</td>
+<td>检索与正则表达式相匹配的值。</td>
+</tr>
+<tr>
+<td>match</td>
+<td>找到一个或多个正则表达式的匹配。</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>替换与正则表达式匹配的子串。</td>
+</tr>
+<tr>
+<td>split</td>
+<td>把字符串分割为字符串数组。</td>
+</tr>
+</tbody></table>
+<p>正则表达式的使用</p>
+<ul>
+<li>test方法：搜索字符串指定的值，根据结果并返回真或假</li>
+<li>exec() 方法：检索字符串中的指定值。返回被找到的值。如果没有发现匹配，则返回 null。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var patt1=new RegExp(&quot;e&quot;);</span><br><span class="line">document.write(patt1.test(&quot;The best things in life are free&quot;));</span><br><span class="line">var patt1=new RegExp(&quot;e&quot;);</span><br><span class="line">document.write(patt1.exec(&quot;The best things in life are free&quot;));</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;\\d&quot;);</span><br><span class="line">var reg2 = /^\d\w&#123;6,12&#125;/;</span><br><span class="line">var str = &quot;1zhangsan&quot;;</span><br><span class="line">if(reg2.test(str))&#123;</span><br><span class="line">    document.write(&quot;匹配到了&quot;)</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    document.write(&quot;未能匹配到&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-12-Global：全局对象"><a href="#2-12-Global：全局对象" class="headerlink" title="2.12 Global：全局对象"></a>2.12 Global：全局对象</h4><p>特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  方法名();</p>
+<p>parseInt():将字符串转为数字（逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number）</p>
+<p>isNaN():判断一个值是否是NaN</p>
+<p>eval():将 JavaScript 字符串，并把它作为脚本代码来执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// var str = &quot;1234abc&quot;;</span><br><span class="line">// var num = parseInt(str);</span><br><span class="line">// document.write(num+&quot;&lt;br/&gt;&quot;);</span><br><span class="line"></span><br><span class="line">var jscode = &quot;alert(132)&quot;;</span><br><span class="line">//alert(jscode);</span><br><span class="line">eval(jscode);</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Tiamo</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/')">JavaScript 第一篇</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=JavaScript 第一篇&amp;url=https://blog.xiaoadai.com/2023/05/23/JavaScript%20%E7%AC%AC%E4%B8%80%E7%AF%87/&amp;pic=https://source.fomal.cc/img/default_cover_24.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.xiaoadai.com" target="_blank">By Wang</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>学习日常<span class="tagsPageCount">4</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://source.fomal.cc/img/default_cover_7.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/21/%E7%BB%99%E5%A4%A7%E5%AE%B6%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAvue%E7%BB%83%E4%B9%A0%E7%9A%84%E5%B0%8F%E7%BD%91%E7%AB%99/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_4.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">给大家安利一个vue练习的小网站</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/26/%E3%80%90%E5%AE%9E%E6%93%8D%E3%80%91%E6%80%8E%E6%A0%B7%E7%94%A8%20Vercel%20%E9%83%A8%E7%BD%B2Chat%20GPT%20Next-Web/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_9.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【实操】怎样用 Vercel 部署Chat GPT Next-Web</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2023/04/21/%E7%BB%99%E5%A4%A7%E5%AE%B6%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAvue%E7%BB%83%E4%B9%A0%E7%9A%84%E5%B0%8F%E7%BD%91%E7%AB%99/" title="给大家安利一个vue练习的小网站"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_4.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-04-21</div><div class="title">给大家安利一个vue练习的小网站</div></div></a></div><div><a href="/2022/08/11/%E8%AF%B4%E8%AF%B4Javascript%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E7%BB%A7%E6%89%BF%EF%BC%9F%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%EF%BC%9F/" title="说说Javascript中的几种继承？如何实现继承？"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_16.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-11</div><div class="title">说说Javascript中的几种继承？如何实现继承？</div></div></a></div><div><a href="/2022/08/09/%E9%9A%8F%E4%BE%BF%E6%95%B2%E6%95%B2%E4%BB%A3%E7%A0%81/" title="随便敲敲JS代码"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_19.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-08-09</div><div class="title">随便敲敲JS代码</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png" ait="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">前端、Python、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(null) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E8%A8%80"><span class="toc-text">一、引言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-JavaScript%E7%AE%80%E4%BB%8B"><span class="toc-text">1.1 JavaScript简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-JavaScript-%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%89%E9%83%A8%E5%88%86"><span class="toc-text">1.2 JavaScript 要学习的三部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-JavaScript%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="toc-text">1.3 JavaScript发展史</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-JavaScript%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90-%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-text">1.4 JavaScript简单例子 两种方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81JavaScript%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">二、JavaScript基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-text">2.1 变量声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1-Number"><span class="toc-text">2.2.1 Number</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-String"><span class="toc-text">2.2.2 String</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-3-Boolean"><span class="toc-text">2.2.3 Boolean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-4-Null"><span class="toc-text">2.2.4 Null</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-5-Undefined"><span class="toc-text">2.2.5 Undefined</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%8Cjavascript-%E9%87%8C%E9%9D%A2%E5%B0%B1%E6%98%AFjson"><span class="toc-text">2.3 引用类型，也就是对象的概念，javascript 里面就是json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.4 数组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-Date%EF%BC%9A%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.5 Date：日期对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-Math%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.6 Math：数学对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2.5 运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="toc-text">2.6 条件分支结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">2.7 循环结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8-%E5%87%BD%E6%95%B0%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">2.8 函数【重点】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-%E5%B8%B8%E8%A7%81%E5%BC%B9%E7%AA%97%E5%87%BD%E6%95%B0"><span class="toc-text">2.9 常见弹窗函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-10-%E4%BA%8B%E4%BB%B6"><span class="toc-text">2.10 事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-11-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80%EF%BC%88%E7%94%A8%E9%80%94-%E5%AF%B9-%E8%A1%A8%E5%8D%95%E9%87%8C%E9%9D%A2%E7%94%A8%E6%88%B7%E7%9A%84%E8%BE%93%E5%85%A5%E5%81%9A%E4%B8%80%E4%BA%9B%E9%99%90%E5%88%B6%EF%BC%8C%E6%AF%94%E5%A6%82%E6%89%8B%E6%9C%BA%E5%8F%B7%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E6%95%B0%E5%AD%97%E6%98%AF%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82%E7%9A%84%EF%BC%89"><span class="toc-text">2.11 正则表达式基础（用途 对 表单里面用户的输入做一些限制，比如手机号只能输入数字是符合要求的）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-12-Global%EF%BC%9A%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.12 Global：全局对象</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/09/%E3%80%90Typora%E3%80%91Typora%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" title="【Typora】Typora破解教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Typora】Typora破解教程"/></a><div class="content"><a class="title" href="/2024/01/09/%E3%80%90Typora%E3%80%91Typora%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" title="【Typora】Typora破解教程">【Typora】Typora破解教程</a><time datetime="2024-01-08T16:00:00.000Z" title="发表于 2024-01-09 00:00:00">2024-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_10.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端【JavaScript】JavaScript 内的 this 指向"/></a><div class="content"><a class="title" href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向">前端【JavaScript】JavaScript 内的 this 指向</a><time datetime="2023-11-13T13:31:28.000Z" title="发表于 2023-11-13 21:31:28">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/%E3%80%90Vue%E3%80%91%E5%88%86%E4%BA%AB%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" title="【Vue】分享下如何在Vue项目中进行网页布局"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_15.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Vue】分享下如何在Vue项目中进行网页布局"/></a><div class="content"><a class="title" href="/2023/11/13/%E3%80%90Vue%E3%80%91%E5%88%86%E4%BA%AB%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" title="【Vue】分享下如何在Vue项目中进行网页布局">【Vue】分享下如何在Vue项目中进行网页布局</a><time datetime="2023-11-13T13:31:28.000Z" title="发表于 2023-11-13 21:31:28">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/12/%E3%80%90Css%E3%80%91CSS%E3%80%81LESS%E3%80%81SASS%E3%80%81SCSS%20%E7%9A%84%E5%8C%BA%E5%88%AB/" title="【Css】CSS、LESS、SASS、SCSS 的区别"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Css】CSS、LESS、SASS、SCSS 的区别"/></a><div class="content"><a class="title" href="/2023/11/12/%E3%80%90Css%E3%80%91CSS%E3%80%81LESS%E3%80%81SASS%E3%80%81SCSS%20%E7%9A%84%E5%8C%BA%E5%88%AB/" title="【Css】CSS、LESS、SASS、SCSS 的区别">【Css】CSS、LESS、SASS、SCSS 的区别</a><time datetime="2023-11-11T16:00:00.000Z" title="发表于 2023-11-12 00:00:00">2023-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/09/%E3%80%90Python%E3%80%9157box%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" title="【Python】57Box自动任务脚本学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python】57Box自动任务脚本学习"/></a><div class="content"><a class="title" href="/2023/11/09/%E3%80%90Python%E3%80%9157box%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" title="【Python】57Box自动任务脚本学习">【Python】57Box自动任务脚本学习</a><time datetime="2023-11-08T16:00:00.000Z" title="发表于 2023-11-09 00:00:00">2023-11-09</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="Tiamo" target="_blank">Tiamo</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">13</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://blog.xiaoadai.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Chat-GPT/" style="font-size: 0.88rem;">Chat GPT<sup>1</sup></a><a href="/tags/Linux%E3%80%90Vi%E3%80%91/" style="font-size: 0.88rem;">Linux【Vi】<sup>1</sup></a><a href="/tags/python%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91/" style="font-size: 0.88rem;">python【爬虫】<sup>2</sup></a><a href="/tags/%E3%80%90JavaScript%E3%80%91/" style="font-size: 0.88rem;">【JavaScript】<sup>1</sup></a><a href="/tags/%E3%80%90Python%E3%80%91/" style="font-size: 0.88rem;">【Python】<sup>1</sup></a><a href="/tags/%E3%80%90Typora%E3%80%91/" style="font-size: 0.88rem;">【Typora】<sup>1</sup></a><a href="/tags/%E3%80%90%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E3%80%91/" style="font-size: 0.88rem;">【青龙面板】<sup>1</sup></a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 0.88rem;">军哥面试题<sup>14</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90CSS%E3%80%91/" style="font-size: 0.88rem;">前端【CSS】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" style="font-size: 0.88rem;">前端【JavaScript】<sup>6</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JaveScript%E3%80%91/" style="font-size: 0.88rem;">前端【JaveScript】<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Layui%E3%80%91/" style="font-size: 0.88rem;">前端【Layui】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Vue%E3%80%91/" style="font-size: 0.88rem;">前端【Vue】<sup>4</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" style="font-size: 0.88rem;">学习日常<sup>4</sup></a><a href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/" style="font-size: 0.88rem;">模拟面试<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://comment.xiaoadai.com/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.18/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://comment.xiaoadai.com/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://comment.xiaoadai.com/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.18/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

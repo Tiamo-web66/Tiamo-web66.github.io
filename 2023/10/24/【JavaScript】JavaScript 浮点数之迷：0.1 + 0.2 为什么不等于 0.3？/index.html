@@ -1,0 +1,512 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？ | By Wang</title><meta name="keywords" content="前端知识"><meta name="author" content="Tiamo"><meta name="copyright" content="Tiamo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"><meta name="application-name" content="前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"><meta property="og:url" content="https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/index.html"><meta property="og:site_name" content="By Wang"><meta property="og:description" content="前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://source.fomal.cc/img/default_cover_13.webp"><meta property="article:author" content="Tiamo"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://source.fomal.cc/img/default_cover_13.webp"><meta name="description" content="前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//npm.onmicrosoft.cn"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"Tiamo","mode":"tianli","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":6,"basicWordCount":1999,"key":"207d044fe5f22c1dc77b","Referer":"https://blog.xiaoadai.com/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://comment.xiaoadai.com/',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Tiamo","link":"链接: ","source":"来源: By Wang","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'By Wang',
+  title: '前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？',
+  postAI: '',
+  pageFillDescription: 'JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？, 0.1 + 0.2 = ? 这个问题你要是问小学生他也许会立马告诉你 0.3。但是在计算机的世界里就没有这么简单了做为一名程序开发者在你面试时如果有人这样问你小心陷阱喽！, 你可能在哪里见过 0.1 + 0.2 = 0.30000000000000004 但是知道这背后真正的原理吗？是只有 JavaScript 中存在吗？带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制。, 先修知识, IEEE 754, 双精确度（64位）, 64Bits 分为以下 3 个部分：, 二进制数公式 V, 符号 S, 尾数 M, 指数 E, 0.1 在 IEEE 754 标准中是如何存储的？, 1. 0.1 转为二进制, 2. 二进制浮点数的科学计数法表示, 3. IEEE 754 存储, 0.1 + 0.2 等于多少？, 浮点数运算三步骤, 对阶, 尾数求和, 规格化和舍入, 只有 JavaScript 中存在吗？, 总结, 转载与知乎浮点数之迷为什么不等于这个问题你要是问小学生他也许会立马告诉你但是在计算机的世界里就没有这么简单了做为一名程序开发者在你面试时如果有人这样问你小心陷阱喽你可能在哪里见过但是知道这背后真正的原理吗是只有中存在吗带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制先修知识以下是一些基础的可能被你所忽略的知识了解它很有用因为这些基础知识在我们的下文讲解中都会应用到如果你已掌握了它可以跳过本节计算机的内部是如何存储的一个浮点数会存储成吗计算机内部都是采用二进制进行表示即编码组成在计算机中是没有的它只认编码可以存储多少个整数可以存储多少个整数个可以存储的整数是的次方个为的次方了解下科学计数法下文讲解会用到在日常生活中遇到一个比较大的数字例如全国总人口数每秒光速等在物理上用这些大数表达很不方便通常可以采用科学计数法表达以下为进制科学计数法表达式底数为其中为整数例如的科学计数法表示为一个数的次方等于该数的倒数例如在标准中也类似只不过它是以一个二进制数来表示底数为以下为的二进制表达式无限循环十进制小数如何转二进制十进制小数转二进制小数部分乘取整数若乘之后的小数部分不为继续乘以直到小数部分为将取出的整数正向排序例如转二进制取整数小数取整数小数取整数小数取整数小数取整数小数取整数小数取整数小数取整数小数取整数小数最终的二进制表示为后面将会无限循环因此二进制无法精确的保存类似这样的小数那这样无限循环也不是办法又该保存多少位呢也就有了我们接下来要重点讲解的标准是二进制浮点数算术标准的简称在这之前各家计算机公司的各型号计算机有着千差万别的浮点数表示方式这对数据交换计算机协同工作造成了极大不便该标准的出现则解决了这一乱象目前已成为业界通用的浮点数运算标准常用的两种浮点数值的表示方式为单精确度位双精确度位例如语言中的通常是指单精确度而是指双精确度双精确度位这里重点讲解下双精确度位中使用单精确度位同理在中不论小数还是整数只有一种数据类型表示这就是类型其遵循标准使用双精度浮点数位字节来存储一个浮点数所以在中其中能够真正决定数字精度的是尾部即分为以下个部分符号用来表示正负号为正为负指数用来表示次方数尾数用来表示精确度二进制数公式根据标准任意二进制数都可用如下公式表示符号符号位的作用是什么你可能会有此疑惑在计算机中一切万物都以二进制表示那么二进制中又以存储你可能想用负号表示负数对不起这是不支持的为了表示负数通常把最高位当作符号位来表示这个符号位就表示了正负数表示正数表示负数顺便抛出几个问题计算机的世界中是否有减法是如何实现的十进制数的二进制为对应的二进制是什么用表示对吗尾数规定在计算机内部保存时默认这个数的第一位总是因此可以被舍去只保存后面部分这样可以节省位有效数字对于双精度位浮点数为位将第一位的舍去可以保存的有效数字为位在双精确度浮点数下二进制数公式演变如下所示指数为一个无符号整数在双精度浮点数中为位取值范围为即表示的范围为中间值由于科学计数法中的是可以出现负数的标准规定指数偏移值的固定值为以双精度浮点数为例这个固定值也可以理解为中间值同理单精度浮点数为正负范围双精确度位中间值为负数为正数为双精确度浮点数下二进制数公式最终演变如下所示在标准中是如何存储的转为二进制不知道怎么转换的参考上面先修知识的十进制小数转二进制将会无限循环二进制浮点数的科学计数法表示任何一个数都可以用科学计数法表示的二进制科学计数法表示如下所示无限循环以上结果类似于十进制科学计数法表示存储的二进制表示如下所示符号位由于为整数所以符号位指数位实际存储为二进制为为位最终为尾数位在中循环位就不能在无限循环下去了在双精确度位下最多存储的有效整数位数为位会采用就近舍入模式进一舍零进行存储舍去首位的得到如下舍入得到如下最终存储最终存储结果转换网站等于多少上面我们讲解了浮点数采用标准的存储过程也同理可以自己推理下对应的二进制分别如下所示浮点数运算三步骤对阶求和规格化对阶浮点数加减首先要判断两数的指数位是否相同小数点位置是否对齐若两数指数位不同需要对阶保证指数位相同对阶时遵守小阶向大阶看齐原则尾数向右移位每移动一位指数位加直到指数位相同即完成对阶本示例的阶码为小于的阶码故对做移码操作移动之前右移位之后尾数最高位空出一位舍入此处舍去末尾右移位完成尾数右移位之后最高位空出来了如何填补呢涉及两个概念逻辑右移最高位永远补算术右移不改变最高位值是补是补尾数部分我们是有隐藏掉最高位是的不明白的再看看上面尾数位有讲解舍去位尾数求和两个尾数直接求和产生进位待处理或者以下方式规格化和舍入由于产生进位阶码需要对应的十进制为此时阶码为位中间值此时符号位指数位如下所示尾部进位位去除最高位默认的因最低位为需进行舍入操作在二进制中是以结尾的舍入的方法就是在最低有效位上加若为则直接舍去若为继续加去除最高位默认的最后一位舍去尾数最后结果中最终存储如下最高位为得到的二进制数如下所示转换为十进制如下所示只有中存在吗这显然不是的这在大多数语言中基本上都会存在此问题大都是基于标准让我们看下在一些常用语言中的运算结果推荐一个用于任意精度十进制和非十进制算术的库解决方案的语句会将转换为字符串并将其缩短为可以使用获取所需要的浮点数运算结果这一问题在中已修复中使用了类内置了对任意精度数字的支持总结推算为什么不等于这个过程是乏味和有趣并存的因为它很难理解但是一旦你掌握了它能让你更深刻的认识到其中的存储运算机制从而理解结果为什么是最后做个总结由于计算机底层存储都是基于二进制的需要事先由十进制转换为二进制存储与运算这整个转换过程中类似于这样的数是无穷尽的无法用二进制数精确表示采用的是双精确度标准能够有效存储的位数为位所以就需要做舍入操作这无可避免的会引起精度丢失另外我们在与相加做对阶求和舍入过程中也会产生精度的丢失转载与知乎浮点数之迷为什么不等于知乎',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-24 21:31:28',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">By Wang</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Chat-GPT/" style="font-size: 1.05rem;">Chat GPT<sup>1</sup></a><a href="/tags/Linux%E3%80%90Vi%E3%80%91/" style="font-size: 1.05rem;">Linux【Vi】<sup>1</sup></a><a href="/tags/python%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91/" style="font-size: 1.05rem;">python【爬虫】<sup>2</sup></a><a href="/tags/%E3%80%90JavaScript%E3%80%91/" style="font-size: 1.05rem;">【JavaScript】<sup>1</sup></a><a href="/tags/%E3%80%90Python%E3%80%91/" style="font-size: 1.05rem;">【Python】<sup>1</sup></a><a href="/tags/%E3%80%90Typora%E3%80%91/" style="font-size: 1.05rem;">【Typora】<sup>1</sup></a><a href="/tags/%E3%80%90%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E3%80%91/" style="font-size: 1.05rem;">【青龙面板】<sup>1</sup></a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem;">军哥面试题<sup>14</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90CSS%E3%80%91/" style="font-size: 1.05rem;">前端【CSS】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" style="font-size: 1.05rem;">前端【JavaScript】<sup>6</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JaveScript%E3%80%91/" style="font-size: 1.05rem;">前端【JaveScript】<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Layui%E3%80%91/" style="font-size: 1.05rem;">前端【Layui】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Vue%E3%80%91/" style="font-size: 1.05rem;">前端【Vue】<sup>4</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" style="font-size: 1.05rem;">学习日常<sup>4</sup></a><a href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/" style="font-size: 1.05rem;">模拟面试<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" itemprop="url">前端知识</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>前端【JavaScript】</span></a></span></div></div><h1 class="post-title" itemprop="name headline">前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-10-24T13:31:28.000Z" title="发表于 2023-10-24 21:31:28">2023-10-24</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-10-24T13:31:28.000Z" title="更新于 2023-10-24 21:31:28">2023-10-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为山东"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>山东</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://source.fomal.cc/img/default_cover_14.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/"><header><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" itemprop="url">前端知识</a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" tabindex="-1" itemprop="url">前端【JavaScript】</a><h1 id="CrawlerTitle" itemprop="name headline">前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Tiamo</span><time itemprop="dateCreated datePublished" datetime="2023-10-24T13:31:28.000Z" title="发表于 2023-10-24 21:31:28">2023-10-24</time><time itemprop="dateCreated datePublished" datetime="2023-10-24T13:31:28.000Z" title="更新于 2023-10-24 21:31:28">2023-10-24</time></header><h1 id="JavaScript-浮点数之迷：0-1-0-2-为什么不等于-0-3？"><a href="#JavaScript-浮点数之迷：0-1-0-2-为什么不等于-0-3？" class="headerlink" title="JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？"></a>JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？</h1><h6 id="“0-1-0-2-”-这个问题，你要是问小学生，他也许会立马告诉你-0-3。但是在计算机的世界里就没有这么简单了，做为一名程序开发者在你面试时如果有人这样问你，小心陷阱喽！"><a href="#“0-1-0-2-”-这个问题，你要是问小学生，他也许会立马告诉你-0-3。但是在计算机的世界里就没有这么简单了，做为一名程序开发者在你面试时如果有人这样问你，小心陷阱喽！" class="headerlink" title="“0.1 + 0.2 = ?” 这个问题，你要是问小学生，他也许会立马告诉你 0.3。但是在计算机的世界里就没有这么简单了，做为一名程序开发者在你面试时如果有人这样问你，小心陷阱喽！"></a>“0.1 + 0.2 = ?” 这个问题，你要是问小学生，他也许会立马告诉你 0.3。但是在计算机的世界里就没有这么简单了，做为一名程序开发者在你面试时如果有人这样问你，小心陷阱喽！</h6><h6 id="你可能在哪里见过-“0-1-0-2-0-30000000000000004”-但是知道这背后真正的原理吗？是只有-JavaScript-中存在吗？带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制。"><a href="#你可能在哪里见过-“0-1-0-2-0-30000000000000004”-但是知道这背后真正的原理吗？是只有-JavaScript-中存在吗？带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制。" class="headerlink" title="你可能在哪里见过 “0.1 + 0.2 = 0.30000000000000004” 但是知道这背后真正的原理吗？是只有 JavaScript 中存在吗？带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制。"></a>你可能在哪里见过 “0.1 + 0.2 = 0.30000000000000004” 但是知道这背后真正的原理吗？是只有 JavaScript 中存在吗？带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制。</h6><h2 id="先修知识"><a href="#先修知识" class="headerlink" title="先修知识"></a><strong>先修知识</strong></h2><p>以下是一些基础的，可能被你所忽略的知识，了解它很有用，因为这些基础知识在我们的下文讲解中都会应用到，如果你已掌握了它，可以跳过本节。</p>
+<p><strong>1. 计算机的内部是如何存储的？一个浮点数 float a = 1 会存储成 1.0 吗？</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机内部都是采用二进制进行表示，即 <span class="number">0</span> <span class="number">1</span> 编码组成。在计算机中是没有 <span class="number">1.0</span> 的，它只认 <span class="number">0</span> <span class="number">1</span> 编码。</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 1bit 可以存储多少个整数？8bit 可以存储多少个整数？</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">N 个 bit 可以存储的整数是 <span class="number">2</span> 的 N 次方个。8bit 为 <span class="number">2</span> 的 <span class="number">8</span> 次方（）。</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 了解下科学计数法，下文讲解会用到</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在日常生活中遇到一个比较大的数字，例如全国总人口数、每秒光速等，在物理上用这些大数表达很不方便，通常可以采用科学计数法表达。</span><br><span class="line"></span><br><span class="line">以下为 <span class="number">10</span> 进制科学计数法表达式，底数为 <span class="number">10</span> ，其中 <span class="number">1</span>≤|a|<span class="language-xml">&lt;10，n 为整数</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">例如，0.1 的科学计数法表示为 。（一个数的 -1 次方等于该数的倒数，例如 = ）</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">在 IEEE 754 标准中也类似，只不过它是以一个二进制数来表示，底数为 2，以下为 0.1 的二进制表达式：</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">无限循环</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 十进制小数如何转二进制？</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">十进制小数转二进制，小数部分，乘 <span class="number">2</span> 取整数，若乘之后的小数部分不为 <span class="number">0</span>，继续乘以 <span class="number">2</span> 直到小数部分为 <span class="number">0</span> ，将取出的整数正向排序。</span><br><span class="line"></span><br><span class="line">例如： <span class="number">0.1</span> 转二进制</span><br><span class="line"></span><br><span class="line"><span class="number">0.1</span> * <span class="number">2</span> = <span class="number">0.2</span> --------------- 取整数 <span class="number">0</span>，小数 <span class="number">0.2</span></span><br><span class="line"><span class="number">0.2</span> * <span class="number">2</span> = <span class="number">0.4</span> --------------- 取整数 <span class="number">0</span>，小数 <span class="number">0.4</span></span><br><span class="line"><span class="number">0.4</span> * <span class="number">2</span> = <span class="number">0.8</span> --------------- 取整数 <span class="number">0</span>，小数 <span class="number">0.8</span></span><br><span class="line"><span class="number">0.8</span> * <span class="number">2</span> = <span class="number">1.6</span> --------------- 取整数 <span class="number">1</span>，小数 <span class="number">0.6</span></span><br><span class="line"><span class="number">0.6</span> * <span class="number">2</span> = <span class="number">1.2</span> --------------- 取整数 <span class="number">1</span>，小数 <span class="number">0.2</span></span><br><span class="line"><span class="number">0.2</span> * <span class="number">2</span> = <span class="number">0.4</span> --------------- 取整数 <span class="number">0</span>，小数 <span class="number">0.4</span></span><br><span class="line"><span class="number">0.4</span> * <span class="number">2</span> = <span class="number">0.8</span> --------------- 取整数 <span class="number">0</span>，小数 <span class="number">0.8</span></span><br><span class="line"><span class="number">0.8</span> * <span class="number">2</span> = <span class="number">1.6</span> --------------- 取整数 <span class="number">1</span>，小数 <span class="number">0.6</span></span><br><span class="line"><span class="number">0.6</span> * <span class="number">2</span> = <span class="number">1.2</span> --------------- 取整数 <span class="number">1</span>，小数 <span class="number">0.2</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">最终 <span class="number">0.1</span> 的二进制表示为 <span class="number">0.00110011</span>... 后面将会 <span class="number">0011</span> 无限循环，因此二进制无法精确的保存类似 <span class="number">0.1</span> 这样的小数。那这样无限循环也不是办法，又该保存多少位呢？也就有了我们接下来要重点讲解的 <span class="variable constant_">IEEE</span> <span class="number">754</span> 标准。</span><br></pre></td></tr></table></figure>
+
+<h2 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a><strong>IEEE 754</strong></h2><p><strong>IEEE 754 是 IEEE 二进制浮点数算术标准的简称</strong>，在这之前各家计算机公司的各型号计算机，有着千差万别的浮点数表示方式，这对数据交换、计算机协同工作造成了极大不便，该标准的出现则解决了这一乱象，目前已成为业界通用的浮点数运算标准。</p>
+<p>IEEE 754 常用的两种浮点数值的表示方式为：单精确度（32位）、双精确度（64位）。例如， C 语言中的 float 通常是指 IEEE 单精确度，而 double 是指双精确度。</p>
+<h3 id="双精确度（64位）"><a href="#双精确度（64位）" class="headerlink" title="双精确度（64位）"></a><strong>双精确度（64位）</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里重点讲解下双精确度（<span class="number">64</span>位）（<span class="variable constant_">JS</span> 中使用），单精确度（<span class="number">32</span> 位）同理。</span><br></pre></td></tr></table></figure>
+
+<p>在 JavaScript 中不论小数还是整数只有一种数据类型表示，这就是 Number 类型，其遵循 IEEE 754 标准，使用双精度浮点数（double）64 位（8 字节）来存储一个浮点数（所以在 <strong>JS 中 1 === 1.0</strong>）。<strong>其中能够真正决定数字精度的是尾部，即</strong></p>
+<h3 id="64Bits-分为以下-3-个部分："><a href="#64Bits-分为以下-3-个部分：" class="headerlink" title="64Bits 分为以下 3 个部分："></a><strong>64Bits 分为以下 3 个部分：</strong></h3><ul>
+<li>sign bit（S，符号）：用来表示正负号，<strong>0 为 正 1 为 负</strong>（1 bit）</li>
+<li>exponent（E，指数）：用来表示次方数（11 bits）</li>
+<li>mantissa（M，尾数）：用来表示精确度 <strong>1 &lt;= M &lt; 2</strong>（53 bits）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img01.anheyu.com/useruploads/140/2023/10/20/6531d5522442d.jpg" alt="JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？1.jpg"></p>
+<h3 id="二进制数公式-V"><a href="#二进制数公式-V" class="headerlink" title="二进制数公式 V"></a><strong>二进制数公式 V</strong></h3><p>根据 IEEE 754 标准，任意二进制数 V 都可用如下公式表示：</p>
+<h3 id="符号-S"><a href="#符号-S" class="headerlink" title="符号 S"></a><strong>符号 S</strong></h3><p>符号位的作用是什么？你可能会有此疑惑，在计算机中一切万物都以二进制表示，那么二进制中又以 <strong>0 1</strong> 存储，你可能想用负号（-）表示负数，对不起这是不支持的，为了表示负数通常把最高位当作符号位来表示，这个符号位就表示了正负数，0 表示正数（+），1 表示负数（-）。</p>
+<p>顺便抛出几个问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 计算机的世界中是否有减法？<span class="number">1</span> - <span class="number">1</span> 是如何实现的？</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 十进制数 <span class="number">1</span> 的二进制为 <span class="number">0000</span> <span class="number">0001</span>，-<span class="number">1</span> 对应的二进制是什么？用 <span class="number">1000</span> <span class="number">0001</span> 表示 -<span class="number">1</span> 对吗？</span><br></pre></td></tr></table></figure>
+
+<h3 id="尾数-M"><a href="#尾数-M" class="headerlink" title="尾数 M"></a><strong>尾数 M</strong></h3><p>IEEE 754 规定，在计算机内部保存 M 时，默认这个数的第一位总是 1，因此可以被舍去，只保存后面部分，这样可以节省 1 位有效数字，对于双精度 64 位浮点数，M 为 52 位，将第一位的 1 舍去，可以保存的有效数字为 52 + 1 = 53 位。</p>
+<p>在双精确度浮点数下二进制数公式 V 演变如下所示：</p>
+<h3 id="指数-E"><a href="#指数-E" class="headerlink" title="指数 E"></a><strong>指数 E</strong></h3><p>E 为一个无符号整数，在双精度浮点数中 E 为 11 位，取值范围为 ，即表示的范围为 0 ~ 2047。</p>
+<p><strong>中间值：</strong> 由于科学计数法中的 E 是可以出现负数的，IEEE 754 标准规定<strong>指数偏移值的固定值</strong>为 ，以双精度浮点数为例：，这个固定值也可以理解为中间值。同理单精度浮点数为 。</p>
+<p><strong>正负范围:</strong> 双精确度 64 位中间值为 1023，负数为 [0, 1022] 正数为 [1024, 2047]。</p>
+<p>双精确度浮点数下二进制数公式 V 最终演变如下所示：</p>
+<h2 id="0-1-在-IEEE-754-标准中是如何存储的？"><a href="#0-1-在-IEEE-754-标准中是如何存储的？" class="headerlink" title="0.1 在 IEEE 754 标准中是如何存储的？"></a><strong>0.1 在 IEEE 754 标准中是如何存储的？</strong></h2><h3 id="1-“0-1”-转为二进制"><a href="#1-“0-1”-转为二进制" class="headerlink" title="1. “0.1” 转为二进制"></a><strong>1. “0.1” 转为二进制</strong></h3><p>不知道怎么转换的，参考上面 <strong>先修知识</strong> 的 <strong>十进制小数转二进制</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.000110011001100110011</span>(<span class="number">0011</span>) <span class="comment">// 0011 将会无限循环</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-二进制浮点数的科学计数法表示"><a href="#2-二进制浮点数的科学计数法表示" class="headerlink" title="2. 二进制浮点数的科学计数法表示"></a><strong>2. 二进制浮点数的科学计数法表示</strong></h3><p>任何一个数都可以用科学计数法表示，0.1 的二进制科学计数法表示如下所示：</p>
+<p>无限循环</p>
+<p>以上结果类似于十进制科学计数法表示：</p>
+<h3 id="3-IEEE-754-存储"><a href="#3-IEEE-754-存储" class="headerlink" title="3. IEEE 754 存储"></a><strong>3. IEEE 754 存储</strong></h3><p>0.1 的二进制表示如下所示</p>
+<p><strong>3.1 符号位</strong></p>
+<p>由于 0.1 为整数，所以符号位 S = 0</p>
+<p><strong>3.2 指数位</strong></p>
+<p>E = -4，实际存储为 -4 + 1023 = 1019，二进制为 1111111011，E 为 11 位，最终为 01111111011</p>
+<p><strong>3.3 尾数位</strong></p>
+<p>在 IEEE 754 中，循环位就不能在无限循环下去了，在双精确度 64 位下最多存储的有效整数位数为 52 位，会采用 <strong>就近舍入（round to nearest）模式（进一舍零）</strong> 进行存储</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">11001100110011001100110011001100110011001100110011001</span> <span class="comment">// M 舍去首位的 1，得到如下</span></span><br><span class="line"><span class="number">1001100110011001100110011001100110011001100110011001</span> <span class="comment">// 0 舍 1 入，得到如下</span></span><br><span class="line"><span class="number">1001100110011001100110011001100110011001100110011010</span> <span class="comment">// 最终存储</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3.4 最终存储结果</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>	<span class="number">01111111011</span>	<span class="number">1001100110011001100110011001100110011001100110011010</span></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img01.anheyu.com/useruploads/140/2023/10/20/6531d6914d665.jpg" alt="JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？2.jpg"></p>
+<p>转换网站：**<a href="https://link.zhihu.com/?target=http://binaryconvert.com/convert_double.html?decimal=048046049">binaryconvert.com/convert_double.html?decimal=048046049</a>**</p>
+<h2 id="0-1-0-2-等于多少？"><a href="#0-1-0-2-等于多少？" class="headerlink" title="0.1 + 0.2 等于多少？"></a><strong>0.1 + 0.2 等于多少？</strong></h2><p>上面我们讲解了浮点数 0.1 采用 IEEE 754 标准的存储过程，0.2 也同理，可以自己推理下，0.1、0.2 对应的二进制分别如下所示：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">S  E            M</span><br><span class="line">0  01111111011  1001100110011001100110011001100110011001100110011010 // 0.1</span><br><span class="line">0  01111111100  1001100110011001100110011001100110011001100110011010 // 0.2</span><br></pre></td></tr></table></figure>
+
+<h3 id="浮点数运算三步骤"><a href="#浮点数运算三步骤" class="headerlink" title="浮点数运算三步骤"></a><strong>浮点数运算三步骤</strong></h3><ul>
+<li>对阶</li>
+<li>求和</li>
+<li>规格化</li>
+</ul>
+<h3 id="对阶"><a href="#对阶" class="headerlink" title="对阶"></a><strong>对阶</strong></h3><p>浮点数加减首先要判断两数的<strong>指数位</strong>是否相同（小数点位置是否对齐），若两数指数位不同，需要对阶保证指数位相同。</p>
+<p>对阶时遵守<strong>小阶向大阶看齐原则</strong>，尾数向右移位，每移动一位，指数位加 1 直到指数位相同，即完成对阶。</p>
+<p>本示例，0.1 的阶码为 -4 小于 0.2 的阶码 -3，故对 0.1 做移码操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0.1 移动之前</span></span><br><span class="line"><span class="number">0</span>  <span class="number">01111111011</span>  <span class="number">1001100110011001100110011001100110011001100110011010</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 0.1 右移 1 位之后尾数最高位空出一位，（0 舍 1 入，此处舍去末尾 0）</span></span><br><span class="line"><span class="number">0</span>  <span class="number">01111111100</span>   <span class="number">100110011001100110011001100110011001100110011001101</span>(<span class="number">0</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 0.1 右移 1 位完成</span></span><br><span class="line"><span class="number">0</span>  <span class="number">01111111100</span>  <span class="number">1100110011001100110011001100110011001100110011001101</span></span><br></pre></td></tr></table></figure>
+
+<p>尾数右移 1 位之后最高位空出来了，如何填补呢？涉及两个概念：</p>
+<ul>
+<li>逻辑右移：最高位永远补 0</li>
+<li>算术右移：不改变最高位值，是 1 补 1，是 0 补 0，尾数部分我们是有隐藏掉最高位是 1 的，不明白的再看看上面 <strong>3.3 尾数位</strong> 有讲解舍去 M 位 1。</li>
+</ul>
+<h3 id="尾数求和"><a href="#尾数求和" class="headerlink" title="尾数求和"></a><strong>尾数求和</strong></h3><p>两个尾数直接求和</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">01111111100</span>   <span class="number">1100110011001100110011001100110011001100110011001101</span> <span class="comment">// 0.1 </span></span><br><span class="line">+ <span class="number">0</span>  <span class="number">01111111100</span>   <span class="number">1001100110011001100110011001100110011001100110011010</span> <span class="comment">// 0.2</span></span><br><span class="line">= <span class="number">0</span>  <span class="number">01111111100</span> <span class="number">100110011001100110011001100110011001100110011001100111</span> <span class="comment">// 产生进位，待处理</span></span><br></pre></td></tr></table></figure>
+
+<p>或者以下方式:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1100110011001100110011001100110011001100110011001101</span></span><br><span class="line">+ <span class="number">1.1001100110011001100110011001100110011001100110011010</span></span><br><span class="line"> <span class="number">10.0110011001100110011001100110011001100110011001100111</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="规格化和舍入"><a href="#规格化和舍入" class="headerlink" title="规格化和舍入"></a><strong>规格化和舍入</strong></h3><p>由于产生进位，阶码需要 + 1，对应的十进制为 1021，此时阶码为 1021 - 1023（64 位中间值）= -2，此时符号位、指数位如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S  E</span><br><span class="line">= <span class="number">0</span>  <span class="number">01111111101</span></span><br></pre></td></tr></table></figure>
+
+<p>尾部进位 2 位，去除最高位默认的 1，因最低位为 1 需进行舍入操作（在二进制中是以 0 结尾的），舍入的方法就是在最低有效位上加 1，若为 0 则直接舍去，若为 1 继续加 1</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100110011001100110011001100110011001100110011001100111</span> <span class="comment">// + 1</span></span><br><span class="line">=  <span class="number">00110011001100110011001100110011001100110011001101000</span> <span class="comment">// 去除最高位默认的 1</span></span><br><span class="line">=  <span class="number">00110011001100110011001100110011001100110011001101000</span> <span class="comment">// 最后一位 0 舍去</span></span><br><span class="line">=  <span class="number">0011001100110011001100110011001100110011001100110100</span>  <span class="comment">// 尾数最后结果</span></span><br></pre></td></tr></table></figure>
+
+<p>IEEE 754 中最终存储如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">01111111101</span> <span class="number">0011001100110011001100110011001100110011001100110100</span></span><br></pre></td></tr></table></figure>
+
+<p>最高位为 1，得到的二进制数如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>^-<span class="number">2</span> * <span class="number">1.0011001100110011001100110011001100110011001100110100</span></span><br></pre></td></tr></table></figure>
+
+<p>转换为十进制如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="只有-JavaScript-中存在吗？"><a href="#只有-JavaScript-中存在吗？" class="headerlink" title="只有 JavaScript 中存在吗？"></a><strong>只有 JavaScript 中存在吗？</strong></h2><p>这显然不是的，这在大多数语言中基本上都会存在此问题（大都是基于 IEEE 754 标准），让我们看下 0.1 + 0.2 在一些常用语言中的运算结果。</p>
+<p><strong>JavaScript</strong></p>
+<p>推荐一个用于任意精度十进制和非十进制算术的 JavaScript 库 <strong><a href="https://link.zhihu.com/?target=https://github.com/MikeMcl/bignumber.js">github.com/MikeMcl/bignumber.js</a></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">.1</span> + <span class="number">.2</span>); <span class="comment">// 0.30000000000000004</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bignumber.js 解决方案</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">BigNumber</span> = <span class="built_in">require</span>(<span class="string">&#x27;bignumber.js&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> x = <span class="keyword">new</span> <span class="title class_">BigNumber</span>(<span class="number">0.1</span>);</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">0.2</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">parseFloat</span>(x.<span class="title function_">plus</span>(y)));</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python</strong></p>
+<p>Python2 的 print 语句会将 0.30000000000000004 转换为字符串并将其缩短为 “0.3”，可以使用 print(repr(.1 + .2)) 获取所需要的浮点数运算结果。这一问题在 Python3 中已修复。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># <span class="title class_">Python2</span></span><br><span class="line"><span class="title function_">print</span>(<span class="number">.1</span> + <span class="number">.2</span>) # <span class="number">0.3</span></span><br><span class="line"><span class="title function_">print</span>(<span class="title function_">repr</span>(<span class="number">.1</span> + <span class="number">.2</span>)) # <span class="number">0.30000000000000004</span></span><br><span class="line"></span><br><span class="line"># <span class="title class_">Python3</span></span><br><span class="line"><span class="title function_">print</span>(<span class="number">.1</span> + <span class="number">.2</span>) # <span class="number">0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<p>Java 中使用了 BigDecimal 类内置了对任意精度数字的支持。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="number">.1</span> + <span class="number">.2</span>); <span class="comment">// 0.30000000000000004</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(.1F + .2F); <span class="comment">// 0.3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p>推算 0.1 + 0.2 为什么不等于 0.3 这个过程是乏味和有趣并存的，因为它很难理解，但是一旦你掌握了它，能让你更深刻的认识到其中的存储、运算机制，从而理解结果为什么是 0.30000000000000004。</p>
+<p>最后做个总结，由于计算机底层存储都是基于二进制的，需要事先由十进制转换为二进制存储与运算，这整个转换过程中，类似于 0.1、0.2 这样的数是无穷尽的，无法用二进制数精确表示。JavaScript 采用的是 IEEE 754 双精确度标准，能够有效存储的位数为 52 位，所以就需要做舍入操作，这无可避免的会引起精度丢失。另外我们在 0.1 与 0.2 相加做对阶、求和、舍入过程中也会产生精度的丢失。</p>
+<h6 id="转载与知乎JavaScript-浮点数之迷：0-1-0-2-为什么不等于-0-3？-知乎-zhihu-com"><a href="#转载与知乎JavaScript-浮点数之迷：0-1-0-2-为什么不等于-0-3？-知乎-zhihu-com" class="headerlink" title="转载与知乎JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？ - 知乎 (zhihu.com)"></a>转载与知乎<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103254614">JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？ - 知乎 (zhihu.com)</a></h6></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Tiamo</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/')">前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=前端【JavaScript】JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？&amp;url=https://blog.xiaoadai.com/2023/10/24/%E3%80%90JavaScript%E3%80%91JavaScript%20%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0.1%20+%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F/&amp;pic=https://source.fomal.cc/img/default_cover_14.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.xiaoadai.com" target="_blank">By Wang</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>前端【JavaScript】<span class="tagsPageCount">6</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://source.fomal.cc/img/default_cover_7.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/16/%E3%80%90JaveScript%E3%80%9130%20%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%20JavaScript%20%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5(%E4%B8%8A%EF%BC%89/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_30.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【JaveScript】30 个有用的 JavaScript 代码片段(上）</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/25/%E3%80%90JavaScript%E3%80%91%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80%EF%BC%9A%E5%88%B7%E7%AE%97%E6%B3%95%E9%A2%98%E5%B8%B8%E7%94%A8%E7%9A%84JS%E5%9F%BA%E7%A1%80%E6%89%AB%E7%9B%B2/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_15.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端【JavaScript】前端算法入门一：刷算法题常用的JS基础扫盲</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_10.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-11-13</div><div class="title">前端【JavaScript】JavaScript 内的 this 指向</div></div></a></div><div><a href="/2023/10/31/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%80%A7/" title="前端【JavaScript】JavaScript字符串的不可变性"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_22.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-31</div><div class="title">前端【JavaScript】JavaScript字符串的不可变性</div></div></a></div><div><a href="/2023/10/16/%E3%80%90JavaScript%E3%80%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E7%9A%84%E5%A4%A7%E5%8E%82%EF%BC%8C%E5%8F%98%E9%87%8F%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BCundefined%EF%BC%9F/" title="前端【JavaScript】为什么有的大厂，变量不能直接赋值undefined？"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_36.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-16</div><div class="title">前端【JavaScript】为什么有的大厂，变量不能直接赋值undefined？</div></div></a></div><div><a href="/2023/10/25/%E3%80%90JavaScript%E3%80%91%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80%EF%BC%9A%E5%88%B7%E7%AE%97%E6%B3%95%E9%A2%98%E5%B8%B8%E7%94%A8%E7%9A%84JS%E5%9F%BA%E7%A1%80%E6%89%AB%E7%9B%B2/" title="前端【JavaScript】前端算法入门一：刷算法题常用的JS基础扫盲"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_15.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-25</div><div class="title">前端【JavaScript】前端算法入门一：刷算法题常用的JS基础扫盲</div></div></a></div><div><a href="/2023/10/16/%E3%80%90JaveScript%E3%80%9130%20%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%20JavaScript%20%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5(%E4%B8%8A%EF%BC%89/" title="【JaveScript】30 个有用的 JavaScript 代码片段(上）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_30.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-16</div><div class="title">【JaveScript】30 个有用的 JavaScript 代码片段(上）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://z1.ax1x.com/2023/09/24/pPToDgg.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png" ait="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">前端、Python、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(null) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0-1-0-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E-0-3%EF%BC%9F"><span class="toc-text">JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E2%80%9C0-1-0-2-%E2%80%9D-%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%A0%E8%A6%81%E6%98%AF%E9%97%AE%E5%B0%8F%E5%AD%A6%E7%94%9F%EF%BC%8C%E4%BB%96%E4%B9%9F%E8%AE%B8%E4%BC%9A%E7%AB%8B%E9%A9%AC%E5%91%8A%E8%AF%89%E4%BD%A0-0-3%E3%80%82%E4%BD%86%E6%98%AF%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E4%B8%96%E7%95%8C%E9%87%8C%E5%B0%B1%E6%B2%A1%E6%9C%89%E8%BF%99%E4%B9%88%E7%AE%80%E5%8D%95%E4%BA%86%EF%BC%8C%E5%81%9A%E4%B8%BA%E4%B8%80%E5%90%8D%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%80%85%E5%9C%A8%E4%BD%A0%E9%9D%A2%E8%AF%95%E6%97%B6%E5%A6%82%E6%9E%9C%E6%9C%89%E4%BA%BA%E8%BF%99%E6%A0%B7%E9%97%AE%E4%BD%A0%EF%BC%8C%E5%B0%8F%E5%BF%83%E9%99%B7%E9%98%B1%E5%96%BD%EF%BC%81"><span class="toc-text">“0.1 + 0.2 &#x3D; ?” 这个问题，你要是问小学生，他也许会立马告诉你 0.3。但是在计算机的世界里就没有这么简单了，做为一名程序开发者在你面试时如果有人这样问你，小心陷阱喽！</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BD%A0%E5%8F%AF%E8%83%BD%E5%9C%A8%E5%93%AA%E9%87%8C%E8%A7%81%E8%BF%87-%E2%80%9C0-1-0-2-0-30000000000000004%E2%80%9D-%E4%BD%86%E6%98%AF%E7%9F%A5%E9%81%93%E8%BF%99%E8%83%8C%E5%90%8E%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%8E%9F%E7%90%86%E5%90%97%EF%BC%9F%E6%98%AF%E5%8F%AA%E6%9C%89-JavaScript-%E4%B8%AD%E5%AD%98%E5%9C%A8%E5%90%97%EF%BC%9F%E5%B8%A6%E7%9D%80%E8%BF%99%E4%BA%9B%E7%96%91%E9%97%AE%E6%9C%AC%E6%96%87%E5%B0%86%E9%87%8D%E7%82%B9%E6%A2%B3%E7%90%86%E8%BF%99%E8%83%8C%E5%90%8E%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6%E3%80%82"><span class="toc-text">你可能在哪里见过 “0.1 + 0.2 &#x3D; 0.30000000000000004” 但是知道这背后真正的原理吗？是只有 JavaScript 中存在吗？带着这些疑问本文将重点梳理这背后的原理及浮点数在计算机中的存储机制。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E4%BF%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">先修知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IEEE-754"><span class="toc-text">IEEE 754</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%B2%BE%E7%A1%AE%E5%BA%A6%EF%BC%8864%E4%BD%8D%EF%BC%89"><span class="toc-text">双精确度（64位）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#64Bits-%E5%88%86%E4%B8%BA%E4%BB%A5%E4%B8%8B-3-%E4%B8%AA%E9%83%A8%E5%88%86%EF%BC%9A"><span class="toc-text">64Bits 分为以下 3 个部分：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%85%AC%E5%BC%8F-V"><span class="toc-text">二进制数公式 V</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7-S"><span class="toc-text">符号 S</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E6%95%B0-M"><span class="toc-text">尾数 M</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E6%95%B0-E"><span class="toc-text">指数 E</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-%E5%9C%A8-IEEE-754-%E6%A0%87%E5%87%86%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84%EF%BC%9F"><span class="toc-text">0.1 在 IEEE 754 标准中是如何存储的？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E2%80%9C0-1%E2%80%9D-%E8%BD%AC%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-text">1. “0.1” 转为二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95%E8%A1%A8%E7%A4%BA"><span class="toc-text">2. 二进制浮点数的科学计数法表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-IEEE-754-%E5%AD%98%E5%82%A8"><span class="toc-text">3. IEEE 754 存储</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-0-2-%E7%AD%89%E4%BA%8E%E5%A4%9A%E5%B0%91%EF%BC%9F"><span class="toc-text">0.1 + 0.2 等于多少？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97%E4%B8%89%E6%AD%A5%E9%AA%A4"><span class="toc-text">浮点数运算三步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E9%98%B6"><span class="toc-text">对阶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E6%95%B0%E6%B1%82%E5%92%8C"><span class="toc-text">尾数求和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E6%A0%BC%E5%8C%96%E5%92%8C%E8%88%8D%E5%85%A5"><span class="toc-text">规格化和舍入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E6%9C%89-JavaScript-%E4%B8%AD%E5%AD%98%E5%9C%A8%E5%90%97%EF%BC%9F"><span class="toc-text">只有 JavaScript 中存在吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BD%AC%E8%BD%BD%E4%B8%8E%E7%9F%A5%E4%B9%8EJavaScript-%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B9%8B%E8%BF%B7%EF%BC%9A0-1-0-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E-0-3%EF%BC%9F-%E7%9F%A5%E4%B9%8E-zhihu-com"><span class="toc-text">转载与知乎JavaScript 浮点数之迷：0.1 + 0.2 为什么不等于 0.3？ - 知乎 (zhihu.com)</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/09/%E3%80%90Typora%E3%80%91Typora%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" title="【Typora】Typora破解教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Typora】Typora破解教程"/></a><div class="content"><a class="title" href="/2024/01/09/%E3%80%90Typora%E3%80%91Typora%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" title="【Typora】Typora破解教程">【Typora】Typora破解教程</a><time datetime="2024-01-08T16:00:00.000Z" title="发表于 2024-01-09 00:00:00">2024-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_10.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端【JavaScript】JavaScript 内的 this 指向"/></a><div class="content"><a class="title" href="/2023/11/13/%E3%80%90JavaScript%E3%80%91JavaScript%20%E5%86%85%E7%9A%84%20this%20%E6%8C%87%E5%90%91/" title="前端【JavaScript】JavaScript 内的 this 指向">前端【JavaScript】JavaScript 内的 this 指向</a><time datetime="2023-11-13T13:31:28.000Z" title="发表于 2023-11-13 21:31:28">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/%E3%80%90Vue%E3%80%91%E5%88%86%E4%BA%AB%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" title="【Vue】分享下如何在Vue项目中进行网页布局"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_15.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Vue】分享下如何在Vue项目中进行网页布局"/></a><div class="content"><a class="title" href="/2023/11/13/%E3%80%90Vue%E3%80%91%E5%88%86%E4%BA%AB%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" title="【Vue】分享下如何在Vue项目中进行网页布局">【Vue】分享下如何在Vue项目中进行网页布局</a><time datetime="2023-11-13T13:31:28.000Z" title="发表于 2023-11-13 21:31:28">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/12/%E3%80%90Css%E3%80%91CSS%E3%80%81LESS%E3%80%81SASS%E3%80%81SCSS%20%E7%9A%84%E5%8C%BA%E5%88%AB/" title="【Css】CSS、LESS、SASS、SCSS 的区别"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Css】CSS、LESS、SASS、SCSS 的区别"/></a><div class="content"><a class="title" href="/2023/11/12/%E3%80%90Css%E3%80%91CSS%E3%80%81LESS%E3%80%81SASS%E3%80%81SCSS%20%E7%9A%84%E5%8C%BA%E5%88%AB/" title="【Css】CSS、LESS、SASS、SCSS 的区别">【Css】CSS、LESS、SASS、SCSS 的区别</a><time datetime="2023-11-11T16:00:00.000Z" title="发表于 2023-11-12 00:00:00">2023-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/09/%E3%80%90Python%E3%80%9157box%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" title="【Python】57Box自动任务脚本学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://source.fomal.cc/img/default_cover_6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python】57Box自动任务脚本学习"/></a><div class="content"><a class="title" href="/2023/11/09/%E3%80%90Python%E3%80%9157box%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" title="【Python】57Box自动任务脚本学习">【Python】57Box自动任务脚本学习</a><time datetime="2023-11-08T16:00:00.000Z" title="发表于 2023-11-09 00:00:00">2023-11-09</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="Tiamo" target="_blank">Tiamo</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">13</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://blog.xiaoadai.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Chat-GPT/" style="font-size: 0.88rem;">Chat GPT<sup>1</sup></a><a href="/tags/Linux%E3%80%90Vi%E3%80%91/" style="font-size: 0.88rem;">Linux【Vi】<sup>1</sup></a><a href="/tags/python%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91/" style="font-size: 0.88rem;">python【爬虫】<sup>2</sup></a><a href="/tags/%E3%80%90JavaScript%E3%80%91/" style="font-size: 0.88rem;">【JavaScript】<sup>1</sup></a><a href="/tags/%E3%80%90Python%E3%80%91/" style="font-size: 0.88rem;">【Python】<sup>1</sup></a><a href="/tags/%E3%80%90Typora%E3%80%91/" style="font-size: 0.88rem;">【Typora】<sup>1</sup></a><a href="/tags/%E3%80%90%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E3%80%91/" style="font-size: 0.88rem;">【青龙面板】<sup>1</sup></a><a href="/tags/%E5%86%9B%E5%93%A5%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 0.88rem;">军哥面试题<sup>14</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90CSS%E3%80%91/" style="font-size: 0.88rem;">前端【CSS】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JavaScript%E3%80%91/" style="font-size: 0.88rem;">前端【JavaScript】<sup>6</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90JaveScript%E3%80%91/" style="font-size: 0.88rem;">前端【JaveScript】<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Layui%E3%80%91/" style="font-size: 0.88rem;">前端【Layui】<sup>2</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E3%80%90Vue%E3%80%91/" style="font-size: 0.88rem;">前端【Vue】<sup>4</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" style="font-size: 0.88rem;">学习日常<sup>4</sup></a><a href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/" style="font-size: 0.88rem;">模拟面试<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://comment.xiaoadai.com/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.18/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://comment.xiaoadai.com/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://comment.xiaoadai.com/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.18/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
